@@ -1,10 +1,16 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+
 :root {
     /* color setting */
     --c-background : #112233;
     --c-midground  : #1E3751;
     --c-foreground : #2F4F70;
+
+    /* utility */
+    --p1 : 4rem;
 }
 
+/* css reset */
 *,
 *::before,
 *::after {
@@ -13,8 +19,29 @@
     box-sizing: border-box;
 }
 
+/* body setting */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
     background-color: var(--c-background);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.wrapper {
+    padding: var(--p1);
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+.wrapper .header .header-title {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -2px;
 }
