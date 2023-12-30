@@ -8,6 +8,7 @@ $(".menu-toggle").click(function() {
 });
 
 
+
 $(document).ready(function(e) {
 	// Show the first tab by default
 	$('.main .page').hide();

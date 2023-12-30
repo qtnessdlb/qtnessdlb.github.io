@@ -247,6 +247,7 @@ footer {
 .menu-btn:hover span {
     background-color: var(--text-light);
 }
+
 .menu-btn-icon {
     display: flex;
     flex-wrap: wrap;
