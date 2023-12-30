@@ -9,30 +9,19 @@ $(".menu-toggle").click(function() {
 
 
 
-
-
-$('.menu a[data-menu]').on('click', function() {
-  var menu = $(this).data('menu');
-  $('.menu a.active').removeClass('active');
-  $(this).addClass('active');
-  $('.active[data-page]').removeClass('active');
-  $('[data-page="' + menu  + '"]').addClass('active');
+$(document).ready(function(e) {
+	// Show the first tab by default
+	$('.main .page').hide();
+	$('.main .page:first').show();
+	$('.menu-shortcut li:first').addClass('li-active');
+	
+	// Change tab class and display content
+	$('.menu-shortcut a').on('click', function(event){
+	  event.preventDefault();
+	  $('.menu-shortcut li').removeClass('li-active');
+	  $(this).parent().addClass('li-active');
+	  $('.main .page').hide();
+	  $($(this).attr('href')).show();
+	});
 });
 
-$('body').on('click', '[data-dialog]', function() {
-  var action = $(this).data('dialog');
-  switch (action) {
-    case 'logout':
-      $('.dialog').toggleClass('active');
-      break;
-    }
-});
-
-$('body').on('click', '[data-dialog-action]', function() {
-  var action = $(this).data('dialog-action');
-  switch (action) {
-    case 'cancel':
-      $(this).closest('.dialog.active').toggleClass('active');
-      break;
-    }
-});
