@@ -6,8 +6,8 @@
 
     // Check if there's a hash in the URL
     if (!window.location.hash) {
-        // If no hash, set the default hash to #page-1
-        window.location.hash = '#page-1';
+        // If no hash, set the default hash to #home
+        window.location.hash = '#home';
     }
 
     // Handle button click to change the page without modifying the URL
@@ -15,14 +15,14 @@
         var target = event.target;
 
         // Check if the clicked element is a navigation link
-        if (target.tagName === 'A' && target.getAttribute('href').startsWith('#page-')) {
+        if (target.tagName === 'A' && target.getAttribute('href').startsWith('#')) {
             event.preventDefault(); // Prevent default link behavior
 
-            // Get the target section id (e.g., #page-1)
+            // Get the target section id (e.g., #home)
             var sectionId = target.getAttribute('href');
 
-            // Change the page without modifying the URL
-            history.pushState({}, document.title, window.location.pathname + sectionId);
+            // Remove the '#' symbol and change the page without modifying the URL
+            history.pushState({}, document.title, window.location.pathname + sectionId.slice(1));
 
             // Scroll to the target section
             document.querySelector(sectionId).scrollIntoView({
