@@ -1,26 +1,32 @@
-// Remove .html extension from the URL
-if (window.location.pathname.endsWith('.html')) {
-	var newPath = window.location.pathname.slice(0, -5);
-	history.replaceState({}, document.title, newPath);
-}
+    // Remove .html extension from the URL
+    if (window.location.pathname.endsWith('.html')) {
+        var newPath = window.location.pathname.slice(0, -5);
+        history.replaceState({}, document.title, newPath);
+    }
 
-// Handle button click to change the page without modifying the URL
-document.addEventListener('click', function (event) {
-	var target = event.target;
+    // Check if there's a hash in the URL
+    if (!window.location.hash) {
+        // If no hash, set the default hash to #page-1
+        window.location.hash = '#page-1';
+    }
 
-	// Check if the clicked element is a navigation link
-	if (target.tagName === 'A' && target.getAttribute('href').startsWith('#page-')) {
-		event.preventDefault(); // Prevent default link behavior
+    // Handle button click to change the page without modifying the URL
+    document.addEventListener('click', function (event) {
+        var target = event.target;
 
-		// Get the target section id (e.g., #page-1)
-		var sectionId = target.getAttribute('href');
+        // Check if the clicked element is a navigation link
+        if (target.tagName === 'A' && target.getAttribute('href').startsWith('#page-')) {
+            event.preventDefault(); // Prevent default link behavior
 
-		// Change the page without modifying the URL
-		history.pushState({}, document.title, window.location.pathname + sectionId);
+            // Get the target section id (e.g., #page-1)
+            var sectionId = target.getAttribute('href');
 
-		// Scroll to the target section
-		document.querySelector(sectionId).scrollIntoView({
-			behavior: 'smooth'
-		});
-	}
-});
+            // Change the page without modifying the URL
+            history.pushState({}, document.title, window.location.pathname + sectionId);
+
+            // Scroll to the target section
+            document.querySelector(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
