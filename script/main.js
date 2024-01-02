@@ -18,10 +18,10 @@
 
     // Handle button click to change the page without modifying the URL
     document.addEventListener('click', function (event) {
-        var target = event.target;
+        var target = event.target.closest('a'); // Find the nearest ancestor A element
 
         // Check if the clicked element is a navigation link
-        if (target.tagName === 'A' && target.getAttribute('href').startsWith('#')) {
+        if (target && target.getAttribute('href').startsWith('#')) {
             event.preventDefault(); // Prevent default link behavior
 
             // Get the target section id (e.g., #home)

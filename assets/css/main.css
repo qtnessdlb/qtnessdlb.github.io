@@ -259,6 +259,10 @@ ul li a {
     z-index: 10;
 }
 
+.page-1:target {
+    transition-delay: 0s; /* Reset transition delay for the first section */
+}
+
 .page-ctn-wrap {
     position: relative;
     display: flex;
