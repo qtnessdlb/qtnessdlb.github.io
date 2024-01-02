@@ -22,7 +22,7 @@
             var sectionId = target.getAttribute('href');
 
             // Remove the '#' symbol and change the page without modifying the URL
-            history.pushState({}, document.title, window.location.pathname + sectionId.slice(1));
+            history.pushState({}, document.title, window.location.pathname + sectionId);
 
             // Scroll to the target section
             document.querySelector(sectionId).scrollIntoView({
