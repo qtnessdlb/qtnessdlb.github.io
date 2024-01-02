@@ -33,9 +33,11 @@
             // Change the page without modifying the URL
             history.pushState({}, document.title, newUrl);
 
-            // Scroll to the target section
-            document.querySelector(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Scroll to the target section after a delay, matching the transition delay in CSS
+            setTimeout(function () {
+                document.querySelector(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, 500); // Use the same delay as the CSS transition
         }
     });
