@@ -5,8 +5,14 @@
     }
 
     // Check if there's a hash in the URL
+    if (window.location.hash) {
+        // If there's a hash, set the default hash to an empty string
+        history.replaceState({}, document.title, window.location.pathname + window.location.search);
+    }
+
+    // Check if there's no hash in the URL
     if (!window.location.hash) {
-        // If no hash, set the default hash to #home
+        // Set the default hash to #home
         history.replaceState({}, document.title, window.location.pathname + window.location.search + '#home');
     }
 
