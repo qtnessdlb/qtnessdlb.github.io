@@ -5,9 +5,9 @@
     }
 
     // Check if there's a hash in the URL
-    if (!window.location.hash) {
-        // If no hash, set the default hash to #home
-        window.location.hash = '#home';
+    if (window.location.hash) {
+        // If there's a hash, set the default hash to an empty string
+        history.replaceState({}, document.title, window.location.pathname + window.location.search);
     }
 
     // Handle button click to change the page without modifying the URL
