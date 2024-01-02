@@ -247,11 +247,20 @@ ul li a {
     overflow: auto;
 }
 
+.page:not(:target) {
+    opacity: 0;
+    transform: translateY(2rem);
+}
+
 .page:target {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: .5s;
+    transition: all .5s cubic-bezier(.2, 0, 0, 1) 0.5s;
     z-index: 10;
+}
+
+.page-1:target {
+    transition-delay: 0s; /* Reset transition delay for the first section */
 }
 
 .page-ctn-wrap {
