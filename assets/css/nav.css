@@ -1,0 +1,137 @@
+@import url("/assets/css/main.css");
+
+
+.logo-wrapper .fab {
+    background: var(--text-white);
+    position: relative;
+    z-index: 3;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fab-animation-reverse 0.4s ease-out forwards;
+}
+
+.logo-wrapper .fab::before,
+.logo-wrapper .fab::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: var(--text-white);
+}
+
+.logo-wrapper .fac {
+    width: 3rem;
+    height: 12rem;
+    border-radius: var(--rounded);
+    position: absolute;
+    background: var(--surface3);
+    z-index: 2;
+    padding: var(--space-sm);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    top: -110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 0.2s ease-in, top 0.2s ease-in, width 0.1s ease-in;
+}
+
+.logo-wrapper .fac a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--icon-size-sm);
+    color: var(--text-white);
+    opacity: 0.8;
+}
+
+.logo-wrapper .fac a:hover {
+    transition: 0.2s;
+    opacity: 1;
+    color: var(--accent1);
+}
+
+.logo-wrapper input {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+}
+
+.logo-wrapper input:checked~.fab {
+    display: flex;
+    animation: fab-animation 0.4s ease-out forwards;
+}
+
+.logo-wrapper input:checked~.fac {
+    animation: fac-animation 0.4s ease-out forwards 0.1s;
+    top: -14em;
+    opacity: 1;
+}
+
+@keyframes fab-animation {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    20% {
+        transform: rotate(60deg) scale(0.93);
+    }
+
+    55% {
+        transform: rotate(35deg) scale(0.97);
+    }
+
+    80% {
+        transform: rotate(48deg) scale(0.94);
+    }
+
+    100% {
+        transform: rotate(45deg) scale(0.95);
+    }
+}
+
+@keyframes fab-animation-reverse {
+    0% {
+        transform: rotate(45deg) scale(0.95);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    55% {
+        transform: rotate(10deg);
+    }
+
+    80% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0) scale(1);
+    }
+}
+
+@keyframes fac-animation {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    33% {
+        transform: scale(0.95, 1.05);
+    }
+
+    66% {
+        transform: scale(1.05, 0.95);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}

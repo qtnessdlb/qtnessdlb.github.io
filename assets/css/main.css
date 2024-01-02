@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;800;900&display=swap");
+
+@import url("/assets/css/style.css");
+@import url("/assets/css/tooltip.css");
+@import url("/assets/css/nav.css");
+
+:root {
+    /* setting seluruh warna base background / surface */
+    --surface-t: #181a2300;
+    --surface1: #181a23;
+    --surface2: #272a38;
+    --surface3: #3e4357;
+    --surface4: #62656d;
+
+    --surface-1-grad: linear-gradient(to top, var(--surface1) 20%, var(--surface-t) 100%);
+
+    /* setting seluruh warna background untuk component */
+    --bg-white-dim: hsla(0, 0%, 100%, 0.1);
+    --bg-black-dim: hsla(0, 0%, 0%, 0.3);
+    --bg1: var(--surface2);
+
+    /* setting seluruh warna teks */
+    --text-white: #fafafa;
+    --text-white-dim: #fafafab3;
+    --text-dark: #222222;
+
+    /* setting seluruh warna accent */
+    --accent1: #2be7be;
+    --accent2: #ff3852;
+    --accent3: #7289da;
+
+    /* setting spacing dan utility */
+    /* === shadow === */
+    --shadow1: box-shadow: 0px 2px 5px 0px rgba(22, 22, 22, 0.25), 0px 10px 10px 0px rgba(22, 22, 22, 0.21), 0px 22px 13px 0px rgba(22, 22, 22, 0.13), 0px 39px 16px 0px rgba(22, 22, 22, 0.04), 0px 61px 17px 0px rgba(22, 22, 22, 0.00);;
+    --shadow2: box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
+    
+    /* sizing */
+    --icon-size-sm: 1.5em;
+    --icon-size: 3em;
+
+    /* padding */
+    --space-sm: 1em;
+    --space-md: 2em;
+    --space-lg: 3em;
+    --space-xl: 6em;
+    --space-xxl: 10rem;
+    
+    /* === radius === */
+    --radius-xs: 0.5em;
+    --radius-sm: 1em;
+    --rounded: 10000px;
+
+    /* debug */
+    --debug1: 2px dashed yellow;
+    --debug2: 2px dashed skyblue;
+    
+}
+
+
+/* Scrollbar Firefox */
+* {scrollbar-width: thin;scrollbar-color: var(--accent1) var(--surface1);}
+/* Scrollbar Chrome, Edge, and Safari */
+*::-webkit-scrollbar {width: 8px;}
+*::-webkit-scrollbar-track {background: var(--surface1);}
+*::-webkit-scrollbar-thumb {background-color: var(--accent1);border-radius: 0px;border: 0px none #ffffff00;}
+
+
+/* utility class */
+kbd{padding: var(--space-sm);background-color: var(--surface2);width: max-content;}
+.overlay-page-bottom{position: absolute;bottom: 0;left: 0;right: 0;width: 100%;height: 10vw;background: var(--surface-1-grad);z-index: 11;}
+.p-center{justify-content: center;text-align: center;}
+.brl-left {border-left: 1px solid var(--bg-white-dim);}
+.brl-right {border-right: 1px solid var(--bg-white-dim);}
+.brl-top {border-top: 1px solid var(--bg-white-dim);}
+.brl-down {border-bottom: 1px solid var(--bg-white-dim);}
+span.animated1 {background: url("https://i.pinimg.com/originals/08/06/e5/0806e52ac6efa9fbf72cbb92fe6737cc.gif") repeat-y;-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: transparent;-webkit-animation: animated-1 80s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;}
+@-webkit-keyframes animated-1 {0% { background-position: 0% 50%; }100% { background-position: 100% 50%; }}
+
+
+body {
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--surface1);
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    gap: var(--space-md);
+    max-width: 800px;
+    height: 100vh;
+    margin: auto;
+    padding: var(--space-md);
+    /* outline: 2px dashed yellow; */
+
+}
+
+/* main-nanigation */
+.main-nav {
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    height: 80px;
+    width: 40vw;
+    background-color: var(--surface2);
+    padding: var(--space-sm);
+    color: var(--text-white);
+    box-shadow: var(--shadow1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-logo {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    aspect-ratio: 1 / 1;
+    border-radius: var(--rounded);
+    overflow: hidden;
+    margin-left: var(--space-sm);
+    cursor: pointer;
+
+    &.nav-logo img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.main-nav-btn-group {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.main-nav-btn-group .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+}
+
+ul li a {
+    font-size: var(--icon-size-sm);
+    color: var(--text-white);
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+        color: var(--accent1);
+        background-color: var(--bg-white-dim);
+    }
+}
+
+/* banner */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 30vh;
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    /* outline: 2px dashed yellow; */
+
+}
+
+.hero-banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.hero-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-black-dim);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: grayscale(1);
+    z-index: 3;
+
+}
+
+.hero-banner-content {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-sm);
+    color: var(--text-white);
+    z-index: 5;
+
+    & .hero-banner-title {
+        font-family: 'Nunito', sans-serif;
+        font-size: 3em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    & .hero-banner-desc {
+        font-size: 1.1em;
+        line-height: 150%;
+        text-transform: capitalize;
+        opacity: 75%;
+    }
+}
+
+/* main container */
+.container-page {
+    position: relative;
+    display: flex;
+}
+
+/* content + navigasi + design */
+.page {
+    /* margin: auto; */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    /* max-height: 60vh; */
+    padding: var(--space-md);
+    padding-bottom: var(--space-xxl);
+
+    color: var(--text-white);
+    transform: translateY(2rem);
+    transition: all .5s cubic-bezier(.2, 0, 0, 1);
+    opacity: 0;
+    overflow: auto;
+}
+
+.page:target {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .5s;
+    z-index: 10;
+}
+
+.page-ctn-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.page-ctn-title {
+    font-size: 2em;
+    font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+
+.page-ctn-desc {
+    font-size: 1.2em;
+    color: var(--text-white-dim);
+}
+
+.page-ctn-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
