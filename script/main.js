@@ -21,8 +21,11 @@
             // Get the target section id (e.g., #home)
             var sectionId = target.getAttribute('href');
 
-            // Remove the '#' symbol and change the page without modifying the URL
-            history.pushState({}, document.title, window.location.pathname + sectionId);
+            // Construct the new URL without the fragment identifier (#)
+            var newUrl = window.location.pathname + window.location.search + sectionId;
+
+            // Change the page without modifying the URL
+            history.pushState({}, document.title, newUrl);
 
             // Scroll to the target section
             document.querySelector(sectionId).scrollIntoView({
