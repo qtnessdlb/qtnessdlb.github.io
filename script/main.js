@@ -1,55 +1,25 @@
-// // toggle menu
-// $('.menu-toggle').on('click', function(){
-//   $('body').toggleClass('open');
-// });
+<script>
+    // Remove .html extension from the URL
+    if (window.location.pathname.endsWith('.html')) {
+        var newPath = window.location.pathname.slice(0, -5);
+        history.replaceState({}, document.title, newPath);
+    }
 
-$(".menu-toggle").click(function() {
-  $('.menu-btn-icon').toggleClass("activated");
-});
+    // Handle button click to avoid adding #page-1 to the URL
+    document.addEventListener('click', function (event) {
+        var target = event.target;
 
+        // Check if the clicked element is a navigation link
+        if (target.tagName === 'A' && target.getAttribute('href').startsWith('#page-')) {
+            event.preventDefault(); // Prevent default link behavior
 
+            // Get the target section id (e.g., #page-1)
+            var sectionId = target.getAttribute('href');
 
-$(document).ready(function(e) {
-	// Show the first tab by default
-	$('.main .page').hide();
-	$('.main .page:first').show();
-	$('.menu-shortcut li:first').addClass('li-active');
-	
-	// Change tab class and display content
-	$('.menu-shortcut a').on('click', function(event){
-	  event.preventDefault();
-	  $('.menu-shortcut li').removeClass('li-active');
-	  $(this).parent().addClass('li-active');
-	  $('.main .page').hide();
-	  $($(this).attr('href')).show();
-	});
-});
-
-$(document).ready(function(){
-
-	
-	$('.menu-toggle').click(function(){
-		
-		var $this = $( this );
-		
-		if ($this.hasClass('is-active')){
-			$('.fsmenu, .logo').removeClass('is-active');
-			$('.fsmenu, .logo').addClass('close-menu');
-		} else{
-			$('.fsmenu, .logo').removeClass('close-menu');
-			$('.fsmenu, .logo').addClass('is-active');
-		};
-		$this.toggleClass('is-active');
-	});
-	
-	$( ".fsmenu--list-element" ).hover(
-		function() {
-			$( this ).addClass('open');
-			$( this ).removeClass('is-closing');
-		}, function() {
-			$( this ).removeClass('open');
-			$( this ).addClass('is-closing');
-		}
-	);
-				
-});
+            // Scroll to the target section
+            document.querySelector(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+</script>
