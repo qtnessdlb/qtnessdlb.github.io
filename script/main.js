@@ -27,17 +27,14 @@
             // Get the target section id (e.g., #home)
             var sectionId = target.getAttribute('href');
 
-            // Construct the new URL without the fragment identifier (#)
-            var newUrl = window.location.pathname + window.location.search + sectionId;
-
             // Change the page without modifying the URL
-            history.pushState({}, document.title, newUrl);
+            history.pushState({}, document.title, window.location.pathname + window.location.search + sectionId);
 
-            // Scroll to the target section after a delay, matching the transition delay in CSS
+            // Scroll to the target section after a short delay
             setTimeout(function () {
                 document.querySelector(sectionId).scrollIntoView({
                     behavior: 'smooth'
                 });
-            }, 500); // Use the same delay as the CSS transition
+            }, 50);
         }
     });
