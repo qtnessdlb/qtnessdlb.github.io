@@ -28,7 +28,7 @@
             var sectionId = target.getAttribute('href');
 
             // Change the page without modifying the URL
-            history.pushState({}, document.title, window.location.pathname + window.location.search + sectionId);
+            window.location.hash = sectionId;
 
             // Scroll to the target section after a short delay
             setTimeout(function () {
