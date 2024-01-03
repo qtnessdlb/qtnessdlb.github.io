@@ -41,18 +41,16 @@ document.addEventListener('click', function (event) {
 
 
 // table and popup
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Function to create table row HTML
     function createTableRow(user) {
         return `
             <tr>
-                <td>${user.number}</td>
-                <td><img class="user-image" src="${user.userImage}" alt="User Image" onclick="openImagePopup('${user.userImage}')"></td>
-                <td>${user.username}</td>
-                <td><a class="instagram-link" href="https://www.instagram.com/${user.instagramUsername}" target="_blank">${user.instagramUsername}</a></td>
-                <td>${user.description}</td>
+                <td class="tbl-bx-num">${user.number}</td>
+                <td class="tbl-bx-img td-usr-img"><img class="user-image" src="${user.userImage}" alt="User Image" onclick="openImagePopup('${user.userImage}')"></td>
+                <td class="tbl-bx-txt td-usr-name">${user.username}</td>
+                <td class="tbl-bx-txt td-usr-ig"><a class="instagram-link" href="https://www.instagram.com/${user.instagramUsername}" target="_blank">${user.instagramUsername}</a></td>
+                <td class="tbl-bx-txt td-usr-desc">${user.description}</td>
             </tr>
         `;
     }

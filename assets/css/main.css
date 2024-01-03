@@ -39,6 +39,11 @@
     --icon-size-sm: 1.5em;
     --icon-size: 3em;
 
+    --adapt-wrap: 40vw;
+    --sm-wrap: 550px;
+    --md-wrap: 800px;
+    --lg-wrap: 1080px;
+
     /* padding */
     --space-sm: 1em;
     --space-md: 2em;
@@ -59,16 +64,16 @@
 
 
 /* Scrollbar Firefox */
-* {scrollbar-width: thin;scrollbar-color: var(--accent1) var(--surface1);}
+{scrollbar-width: thin;scrollbar-color: var(--accent1) var(--surface1);}
 /* Scrollbar Chrome, Edge, and Safari */
-*::-webkit-scrollbar {width: 8px;}
-*::-webkit-scrollbar-track {background: var(--surface1);}
-*::-webkit-scrollbar-thumb {background-color: var(--accent1);border-radius: 0px;border: 0px none #ffffff00;}
-
+::-webkit-scrollbar {width: 8px;}
+*::-webkit-scrollbar-track {background: var(--surface2);}
+*::-webkit-scrollbar-thumb {background-color: var(--surface3);border-radius: 0px;border: 0px none #ffffff00; transition: background-color 2s ease;}
+*::-webkit-scrollbar-thumb:hover {background-color: var(--accent1)}
 
 /* utility class */
 kbd{padding: var(--space-sm);background-color: var(--surface2);width: max-content;}
-.overlay-page-bottom{position: absolute;bottom: 0;left: 0;right: 0;width: 100%;height: 10vw;background: var(--surface-1-grad);z-index: 11;}
+.overlay-page-bottom{position: absolute;bottom: 0;left: 0;right: 0;width: 100%;height: 8vw;background: var(--surface-1-grad);z-index: 11;}
 .p-center{justify-content: center;text-align: center;}
 .brl-left {border-left: 1px solid var(--bg-white-dim);}
 .brl-right {border-right: 1px solid var(--bg-white-dim);}
@@ -89,13 +94,13 @@ body {
 .container {
     position: relative;
     display: flex;
+    justify-content: center;
     gap: var(--space-md);
-    max-width: 800px;
     height: 100vh;
+    max-width: 1080px;
     margin: auto;
     padding: var(--space-md);
-    /* outline: 2px dashed yellow; */
-
+    outline: var(--debug1);
 }
 
 /* main-nanigation */
@@ -106,7 +111,7 @@ body {
     transform: translateX(-50%);
     margin: 0 auto;
     height: 80px;
-    width: 40vw;
+    width: var(--adapt-wrap);
     background-color: var(--surface2);
     padding: var(--space-sm);
     color: var(--text-white);
@@ -235,7 +240,7 @@ ul li a {
     left: 0;
 
     width: 100%;
-    height: 100%;
+    height: 95%;
     /* max-height: 60vh; */
     padding: var(--space-md);
     padding-bottom: var(--space-xxl);
@@ -263,11 +268,21 @@ ul li a {
     transition-delay: 0s; /* Reset transition delay for the first section */
 }
 
-.page-ctn-wrap {
+.page-ctn-wrap,
+.page-ctn-full {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    margin: auto;
+}
+
+.page-ctn-wrap {
+    max-width: var(--md-wrap);
+}
+
+.page-ctn-full {
+    max-width: var(--lg-wrap);
 }
 
 .page-ctn-title {
@@ -296,9 +311,36 @@ ul li a {
     margin-top: 20px;
 }
 
-#leaderboardTable td {
-    padding: 10px;
+#leaderboardTable thead th {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--accent1);
+    color: var(--text-dark);
     text-align: center;
+}
+
+#leaderboardTable .tbl-bx-num,
+#leaderboardTable .tbl-bx-txt {
+    font-size: 1.2em;
+}
+
+#leaderboardTable .tbl-bx-num,
+#leaderboardTable .tbl-bx-txt,
+#leaderboardTable .tbl-bx-img {
+    padding-block: var(--space-md);
+    padding-inline: var(--space-sm);
+}
+.tbl-bx-txt.td-usr-name {
+    font-weight: 600;
+}
+
+#leaderboardTable tbody tr {
+    gap: 10px;
+    transition: outline 1s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        outline: 1px solid var(--accent3);
+        background-color: var(--surface4);
+    }
 }
 
 #leaderboardTable tbody tr:nth-child(odd) {
@@ -309,6 +351,7 @@ ul li a {
     background-color: var(--surface3);
 }
 
+
 .user-image {
     --user-sizing: 50px;
     width: var(--user-sizing);
@@ -316,6 +359,7 @@ ul li a {
     border-radius: var(--rounded);
     object-fit: cover;
     cursor: pointer;
+    transition: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     &:hover {
         outline: 2px solid var(--accent1);
         outline-offset: 2px;
@@ -366,4 +410,103 @@ ul li a {
 /* Hover effect */
 .image-popup:hover {
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: var(--space-sm);
+    }
+
+    .main-nav {
+        bottom: 0;
+        transform: translateX(-50%) translateY(0);
+        width: 100%;
+    }
+
+    .main-nav-btn-group .nav-link {
+        padding: var(--space-sm) var(--space-sm);
+        font-size: 1.2em;
+    }
+
+    .hero-banner {
+        padding: var(--space-sm);
+    }
+
+    .hero-banner-img,
+    .hero-banner-overlay {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-banner-content {
+        position: inherit;
+        padding: var(--space-sm);
+    
+        & .hero-banner-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    
+        & .hero-banner-desc {
+            font-size: .8em;
+            line-height: 150%;
+            text-transform: capitalize;
+            opacity: 75%;
+        }
+    }
+
+    .page {
+        padding: var(--space-sm);
+        padding-bottom: var(--space-xl);
+    }
+
+    #leaderboardTable {
+        width: 100%;
+    }
+
+    #leaderboardTable thead {
+        display: none;
+    }
+
+    #leaderboardTable tbody {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #leaderboardTable tbody tr {
+        display: flex;
+        align-items: center;    
+    }
+    
+    #leaderboardTable tbody td {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+    }
+
+    #leaderboardTable .tbl-bx-txt, 
+    #leaderboardTable .tbl-bx-num,
+    #leaderboardTable .tbl-bx-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-block: var(--space-md);
+        padding-inline: var(--space-sm);
+    }
+
+    #leaderboardTable .tbl-bx-num,
+    #leaderboardTable .tbl-bx-txt {
+        font-size: .9em;
+    }
+
+    #leaderboardTable .tbl-bx-num,
+    #leaderboardTable .tbl-bx-txt.td-usr-desc {
+        display: none;
+    }    
 }
