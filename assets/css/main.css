@@ -100,7 +100,6 @@ body {
     max-width: 1080px;
     margin: auto;
     padding: var(--space-md);
-    outline: var(--debug1);
 }
 
 /* main-nanigation */
@@ -386,8 +385,8 @@ ul li a {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    overflow: hidden; /* Hide scroll bars */
-    transition: opacity 0.3s ease; /* Add a fade-in effect */
+    overflow: hidden;
+    transition: opacity 0.3s ease;
     opacity: 0;
 }
 
@@ -413,9 +412,20 @@ ul li a {
 }
 
 @media screen and (max-width: 768px) {
+
+    span.highlight {
+        padding: 4px 12px;
+        background-color: var(--surface3);
+    }
+
+    body{
+        height: 100vh;
+    }
+
     .container {
         flex-direction: column;
         padding: var(--space-sm);
+        height: 95%;
     }
 
     .main-nav {
@@ -430,7 +440,8 @@ ul li a {
     }
 
     .hero-banner {
-        padding: var(--space-sm);
+        padding: var(--space-md) var(--space-sm);
+        height: auto;
     }
 
     .hero-banner-img,
@@ -445,13 +456,13 @@ ul li a {
     
         & .hero-banner-title {
             font-family: 'Nunito', sans-serif;
-            font-size: 2em;
+            font-size: 1.5em;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
     
         & .hero-banner-desc {
-            font-size: .8em;
+            font-size: .7em;
             line-height: 150%;
             text-transform: capitalize;
             opacity: 75%;
@@ -461,6 +472,22 @@ ul li a {
     .page {
         padding: var(--space-sm);
         padding-bottom: var(--space-xl);
+        height: 100%;
+
+        &#leaderboard {
+            padding: 0;
+        }
+    }
+
+    .page-ctn-title {
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+    
+    .page-ctn-desc {
+        font-size: 1em;
+        line-height: 180%;
+        color: var(--text-white-dim);
     }
 
     #leaderboardTable {
@@ -487,6 +514,10 @@ ul li a {
         flex-direction: column;
         text-align: left;
         width: 100%;
+    }
+
+    .user-image {
+        --user-sizing: 30px;
     }
 
     #leaderboardTable .tbl-bx-txt, 
