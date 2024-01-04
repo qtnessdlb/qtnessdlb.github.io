@@ -432,6 +432,10 @@ ul li a {
         height: 95%;
     }
 
+    main {
+        height: 55%;
+    }
+
     .main-nav {
         bottom: 0;
         transform: translateX(-50%) translateY(0);
