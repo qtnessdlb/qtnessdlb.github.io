@@ -27,6 +27,7 @@
 
     /* setting seluruh warna accent */
     --accent1: #2be7be;
+    --accent1-hover: #22c7a3;
     --accent2: #ff3852;
     --accent3: #7289da;
 
@@ -44,12 +45,15 @@
     --md-wrap: 800px;
     --lg-wrap: 1080px;
 
-    /* padding */
+    /* padding & gap */
     --space-sm: 1em;
     --space-md: 2em;
     --space-lg: 3em;
     --space-xl: 6em;
     --space-xxl: 10rem;
+
+    --gap1: 1rem;
+    --gap2: 3rem;
     
     /* === radius === */
     --radius-xs: 0.5em;
@@ -82,6 +86,9 @@ kbd{padding: var(--space-sm);background-color: var(--surface2);width: max-conten
 span.animated1 {background: url("https://i.pinimg.com/originals/08/06/e5/0806e52ac6efa9fbf72cbb92fe6737cc.gif") repeat-y;-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: transparent;-webkit-animation: animated-1 80s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;}
 @-webkit-keyframes animated-1 {0% { background-position: 0% 50%; }100% { background-position: 100% 50%; }}
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     position: relative;
@@ -279,13 +286,16 @@ ul li a {
     gap: var(--space-md);
     margin: auto;
 }
+.page-ctn-wrap {max-width: var(--md-wrap);}
+.page-ctn-full {max-width: var(--lg-wrap);}
 
-.page-ctn-wrap {
-    max-width: var(--md-wrap);
-}
-
-.page-ctn-full {
-    max-width: var(--lg-wrap);
+.page-ctn-box {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    background-color: var(--surface2);
+    border-radius: var(--radius-sm);
+    gap: var(--gap1);
 }
 
 .page-ctn-title {
@@ -304,6 +314,30 @@ ul li a {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.page-ctn-img-banner {
+    position: relative;
+    width: 100%;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.page-ctn-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    max-width: max-content;
+    background-color: var(--accent1);
+    color: var(--text-dark);
+    gap: 8px;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: var(--accent1-hover);
+    }
 }
 
 
@@ -433,7 +467,7 @@ ul li a {
     }
 
     main {
-        height: 55%;
+        height: 45%;
     }
 
     .main-nav {
