@@ -104,3 +104,20 @@ function closeImagePopupOnEsc(event) {
         closeImagePopup();
     }
 }
+
+// disable right click
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+
+function openModal() {
+    document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal(event) {
+    const modal = document.getElementById('modal');
+    if (event.target === modal || event.target.classList.contains('close-modal')) {
+        modal.style.display = 'none';
+    }
+}
