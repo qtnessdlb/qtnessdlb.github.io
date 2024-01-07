@@ -610,6 +610,13 @@ span.highlight {
     position: relative;
 }
 
+.modal-content .modal-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
+
 @media screen and (max-width: 768px) {
 
     body{
