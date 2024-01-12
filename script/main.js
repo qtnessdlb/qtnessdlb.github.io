@@ -12,6 +12,7 @@ if (!window.location.hash) {
     history.replaceState({}, document.title, window.location.pathname + window.location.search + '#home');
 }
 
+
 document.addEventListener('click', function (event) {
     var target = event.target.closest('a');
 
@@ -29,6 +30,62 @@ document.addEventListener('click', function (event) {
         }, 50);
     }
 });
+
+
+// download section
+function createDownloadItem(item) {
+    const downloadItem = document.createElement('a');
+    downloadItem.href = item.link;
+    downloadItem.className = 'page-ctn-download-box';
+
+    downloadItem.innerHTML = `
+        <i class="ti ti-cloud-download" id="downloadicon"></i>
+        <div>
+            <h2 class="page-ctn-title-download">${item.title}</h2>
+            <p class="page-ctn-desc-download">${item.description}</p>
+        </div>
+        <span class="page-ctn-size-download">${item.size}</span>
+    `;
+
+    return downloadItem;
+}
+
+function appendDownloadItems(data) {
+    const downloadSection = document.getElementById('download');
+    const pageCtnWrap = downloadSection.querySelector('.page-ctn-wrap');
+
+    data.forEach(item => {
+        const downloadItem = createDownloadItem(item);
+        pageCtnWrap.appendChild(downloadItem);
+    });
+}
+
+function filterDownloadItems(searchText) {
+    const downloadSection = document.getElementById('download');
+    const pageCtnWrap = downloadSection.querySelector('.page-ctn-wrap');
+    const downloadItems = pageCtnWrap.querySelectorAll('.page-ctn-download-box');
+
+    downloadItems.forEach(item => {
+        const title = item.querySelector('.page-ctn-title-download').textContent.toLowerCase();
+        const description = item.querySelector('.page-ctn-desc-download').textContent.toLowerCase();
+        const shouldShow = title.includes(searchText.toLowerCase()) || description.includes(searchText.toLowerCase());
+        item.style.display = shouldShow ? 'block' : 'none';
+    });
+}
+
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', function () {
+    const searchText = this.value.trim();
+    filterDownloadItems(searchText);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    appendDownloadItems(downloadData);
+});
+
+
+
+
 
 
 // table and popup

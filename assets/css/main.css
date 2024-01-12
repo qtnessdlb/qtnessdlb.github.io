@@ -89,6 +89,10 @@ kbd{padding: var(--space-sm);background-color: var(--surface2);width: max-conten
 span.animated1 {background: url("https://i.pinimg.com/originals/08/06/e5/0806e52ac6efa9fbf72cbb92fe6737cc.gif") repeat-y;-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: transparent;-webkit-animation: animated-1 80s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;}
 @-webkit-keyframes animated-1 {0% { background-position: 0% 50%; }100% { background-position: 100% 50%; }}
 
+*,*::before,*::after {margin: 0;padding: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+ul {list-style-type: none;}
+a {text-decoration: none}
+
 html {scroll-behavior: smooth;}
 
 body {
@@ -104,6 +108,7 @@ body {
 .container {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: var(--space-md);
     height: 100vh;
@@ -396,6 +401,49 @@ ul li a {
         background-color: var(--accent1-hover);
     }
 }
+
+
+/* download section */
+.page-ctn-download-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-white);
+    background-color: var(--surface2);
+    padding: var(--space-md) var(--space-xl);
+    opacity: .8;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.page-ctn-wrap .page-ctn-download-search {
+    font-family: inherit;
+    color: var(--text-white);
+    background-color: var(--surface2);
+    padding: var(--space-md);
+    border: none;
+    outline: none;
+
+    &::placeholder {
+        color: var(--surface4);
+    }
+}
+
+.page-ctn-download-box #downloadicon {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-30%, -30%);
+    font-size: 8rem;
+    opacity: .1;
+}
+
+
 
 
 /* leaderboard section */
