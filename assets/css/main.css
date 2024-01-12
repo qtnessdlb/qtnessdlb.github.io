@@ -409,6 +409,7 @@ ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-decoration: none;
     color: var(--text-white);
     background-color: var(--surface2);
     padding: var(--space-md) var(--space-xl);
