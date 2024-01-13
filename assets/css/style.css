@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+:root {
+    --surface-1: #131216;
+    --surface-2: #242323;
+
+    --bg-trans-1: #3aeeac33;
+    --bg-trans-2: #fafafa33;
+
+    --accent-1: #24fdbc;
+
+    --white: #fafafa;
+    --white-dim: #fafafa33;
+    --black: #111111;
+
+    --text-light: #fafafa;
+    --text-dim: #fafafa3b;
+    --text-dark: #222222;
+
+    --transition-1: all ease .2s;
+}
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+ul {list-style-type: none;}
+a {text-decoration: none}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--surface-1);
+    overflow: hidden;
+    font-size: 90%;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(to bottom, #131216ec, var(--surface-1)),
+    url('../img/fubuki-shirakami-wallpaper-thumb0.png');
+    z-index: -1;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.super-title-wrapper {
+    position: relative;
+}
+
+.super-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 8em;
+    font-weight: 500;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 16px;
+    z-index: 5;
+}
+
+.super-title-absolute{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    margin: 0 auto;
+    font-family: 'Anton', sans-serif;
+    font-size: 8em;
+    font-weight: 500;
+    /* color: var(--text-light); */
+    /* color: transparent; */
+    -webkit-text-stroke: 1px var(--text-dim);
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 24px;
+    z-index: 2;
+
+}
+
+.super-subtitle {
+    font-size: 2em;
+    font-weight: 500;
+    color: var(--text-light);
+    text-transform: capitalize;
+}
+
+.btn-group {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+
+
+/* ===== Footer Section Utility ===== */
+footer {
+    height: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    border-top: 1px solid var(--white-dim);
+    width: 100%;
+    /* background-color: tomato; */
+    z-index: 1000;
+}
+
+.menu-btn {
+    display: flex;
+    position: relative;
+    width: auto;
+    cursor: pointer;
+}
+
+.menu-shortcut {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-shortcut li {
+    height: 100%;
+}
+
+.li-active a{
+    color: var(--text-light);
+}
+
+.social-btn {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* ==== utility ==== */
+.btn {
+    position: relative;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all ease .2s;
+    text-decoration: none;
+    display: block;
+}
+
+.btn.btn-prime {
+    color: var(--text-light);
+    background-color: var(--bg-trans-2);
+    &:hover{
+        color: var(--surface-1);
+        background-color: var(--accent-1);
+    }
+}
+
+.btn.btn-outline {
+    color: var(--text-light);
+    -webkit-box-shadow:inset 0px 0px 0px 2px var(--accent-1);
+    -moz-box-shadow:inset 0px 0px 0px 2px var(--accent-1);
+    box-shadow:inset 0px 0px 0px 2px var(--accent-1);
+    &:hover{
+        color: var(--surface-1);
+        background-color: var(--accent-1);
+    }
+}
+
+.btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    height: auto;
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    color: var(--text-dim);
+    padding: .5em;
+    transition: var(--transition-1);
+
+    &:hover{
+        color: var(--text-light);
+        background-color: var(--white-dim);
+    }
+}
+
+.txt-box {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    height: 100%;
+    padding-inline: 2em;
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: var(--transition-1);
+    /* background-color: var(--bg-trans-1); */
+
+    &:hover{
+        color: var(--text-light);
+        background-color: var(--white-dim);
+    }
+}
+
+.br-left {border-left: 1px solid var(--white-dim);}
+.br-right {border-right: 1px solid var(--white-dim);}
+
+/* button-menu-btn-icon */
+.menu-btn:hover span {
+    background-color: var(--text-light);
+}
+
+.menu-btn-icon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1em;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+.menu-btn-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-dim);
+    transition: all 0.25s;
+}
+.menu-btn-icon.activated span {background-color: var(--accent-1);}
+.menu-btn-icon.activated span:nth-child(1),.menu-btn-icon.four.activated span:nth-child(3) {width: 80%;}
+.menu-btn-icon.activated span:nth-child(2) {width: 50%;transform: translateX(100%);}
+
+
+/* ========== another =========== */
+.fsmenu {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+}
+
+.fsmenu .fsmenu--container {
+    position: absolute;  
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8em 3em 3em;
+    background: var(--surface-1);
+    overflow: hidden;
+}
+
+/* .fsmenu .fsmenu--container .fsmenu--text-block {
+    width: 100%;
+    height: 100%;
+}
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container {
+    width: 100%;
+    height: 100%;
+} */
+
+/* .fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+} */
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element {
+    width: 100%;
+    height: 35%;
+    list-style-type: none;
+    text-align: right;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.2s ease;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element a:hover {
+    color: var(--text-light);
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element a span {
+    font-size: 4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+    z-index: 1002;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element a span:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    z-index: 1003;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element .fsmenu--link-img {
+    width: 0px;
+    height: 100vh;
+    padding: 8em 3em 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: calc(100vw - 720px);
+    z-index: 1001;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element .fsmenu--link-img .fsmenu--img-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element .fsmenu--link-img .fsmenu--img-container img {
+    width: 624px;
+    display: block;
+    position: absolute;
+    /* right: 0;
+    top: 50%;
+    transform: translate(0, -50%); */
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element.open .fsmenu--link-img {
+    left: auto;
+    right: calc(100vw - 720px);
+    -webkit-animation: animMenuRevealImg 0.4s ease 0s forwards;
+    animation: animMenuRevealImg 0.4s ease 0s forwards;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element.open .fsmenu--link-img .fsmenu--img-container img {
+    right: 0;
+    left: auto;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element.is-closing .fsmenu--link-img {
+    left: 0;
+    right: auto;
+    -webkit-animation: animMenuCloseImg 0.4s ease 0s forwards;
+    animation: animMenuCloseImg 0.4s ease 0s forwards;
+}
+
+.fsmenu .fsmenu--container .fsmenu--text-block .fsmenu--text-container .fsmenu--list .fsmenu--list-element.is-closing .fsmenu--link-img .fsmenu--img-container img {
+    left: 0;
+    right: auto;
+}
+
+.fsmenu.is-active {
+    display: block;
+}
+
+.fsmenu.is-active .fsmenu--container {
+    -webkit-animation: animMenuReveal 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s forwards;
+    animation: animMenuReveal 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s forwards;
+}
+
+.fsmenu.is-active .fsmenu--container .fsmenu--text-container .fsmenu--list .fsmenu--list-element a span:before {
+    -webkit-animation: animMenuRevealLinks 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.4s forwards;
+    animation: animMenuRevealLinks 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.4s forwards;
+}
+
+.fsmenu.close-menu {
+    display: block;
+}
+
+.fsmenu.close-menu .fsmenu--container {
+    width: 100vw;
+    right: auto;
+    left: 0;
+    -webkit-animation: animMenuClose 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.3s forwards;
+    animation: animMenuClose 0.6s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0.3s forwards;
+}
+
+.fsmenu.close-menu .fsmenu--container .fsmenu--text-container .fsmenu--list .fsmenu--list-element a span:before {
+    left: auto;
+    right: 0;
+    background:var(--surface-1);
+    -webkit-animation: animMenuCloseLinks 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s forwards;
+    animation: animMenuCloseLinks 0.4s cubic-bezier(0.13, 0.13, 0.02, 1.07) 0s forwards;
+}
+
+@-webkit-keyframes animMenuReveal {
+    0% {
+        width: 0vw;
+    }
+
+    100% {
+        width: 100vw;
+    }
+}
+
+@keyframes animMenuReveal {
+    0% {
+        width: 0vw;
+    }
+
+    100% {
+        width: 100vw;
+    }
+}
+
+@-webkit-keyframes animMenuRevealLinks {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes animMenuRevealLinks {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@-webkit-keyframes animMenuClose {
+    0% {
+        width: 100vw;
+        padding: 8em 3em 3em;
+    }
+
+    100% {
+        width: 0vw;
+        padding: 8em 0 0;
+    }
+}
+
+@keyframes animMenuClose {
+    0% {
+        width: 100vw;
+        padding: 8em 3em 3em;
+    }
+
+    100% {
+        width: 0vw;
+        padding: 8em 0 0;
+    }
+}
+
+@-webkit-keyframes animMenuCloseLinks {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 110%;
+    }
+}
+
+@keyframes animMenuCloseLinks {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 110%;
+    }
+}
+
+@-webkit-keyframes animMenuRevealImg {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 720px;
+    }
+}
+
+@keyframes animMenuRevealImg {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 720px;
+    }
+}
+
+@-webkit-keyframes animMenuCloseImg {
+    0% {
+        width: 720px;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes animMenuCloseImg {
+    0% {
+        width: 720px;
+    }
+
+    100% {
+        width: 0;
+    }
+}
