@@ -799,5 +799,35 @@ span.highlight {
     #leaderboardTable .tbl-bx-img,
     #leaderboardTable .tbl-bx-txt.td-usr-ig {
         display: none;
-    }    
+    }
+
+
+    span.highlight {
+        font-family: monospace;
+        padding: 0px 0px;
+        background-color: transparent;
+        border-bottom: 1px solid var(--accent1);
+    }
+
+
+    .page-ctn-download-box {
+        padding: var(--space-md) var(--space-md);
+    }
+    
+    .page-ctn-download-box-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap1);
+    }
+
+    .page-ctn-download-box .page-ctn-title-download {
+        font-size: 1.25em;
+    }
+    .page-ctn-download-box .page-ctn-desc-download {
+        font-size: .9em;
+    }
+    .page-ctn-download-box .page-ctn-author-download {
+        font-size: .9em;
+        opacity: 60%;
+    }
 }

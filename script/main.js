@@ -39,9 +39,10 @@ function createDownloadItem(item) {
 
     downloadItem.innerHTML = `
         <i class="ti ti-cloud-download" id="downloadicon"></i>
-        <div>
+        <div class="page-ctn-download-box-wrapper">
             <h2 class="page-ctn-title-download">${item.title}</h2>
             <p class="page-ctn-desc-download">${item.description}</p>
+            <p class="page-ctn-author-download">${item.author}</p>
         </div>
         <span class="page-ctn-size-download">${item.size}</span>
     `;
@@ -67,7 +68,8 @@ function filterDownloadItems(searchText) {
     downloadItems.forEach(item => {
         const title = item.querySelector('.page-ctn-title-download').textContent.toLowerCase();
         const description = item.querySelector('.page-ctn-desc-download').textContent.toLowerCase();
-        const shouldShow = title.includes(searchText.toLowerCase()) || description.includes(searchText.toLowerCase());
+        const author = item.querySelector('.page-ctn-author-download').textContent.toLowerCase();
+        const shouldShow = title.includes(searchText.toLowerCase()) || description.includes(searchText.toLowerCase()) || author.includes(searchText.toLowerCase());
         item.style.display = shouldShow ? 'block' : 'none';
     });
 }
