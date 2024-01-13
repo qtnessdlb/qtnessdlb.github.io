@@ -91,7 +91,7 @@ span.animated1 {background: url("https://i.pinimg.com/originals/08/06/e5/0806e52
 
 *,*::before,*::after {margin: 0;padding: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
 ul {list-style-type: none;}
-a {text-decoration: none}
+a {text-decoration: none;}
 
 html {scroll-behavior: smooth;}
 

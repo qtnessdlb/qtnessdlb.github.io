@@ -31,7 +31,6 @@ document.addEventListener('click', function (event) {
     }
 });
 
-
 // download section
 function createDownloadItem(item) {
     const downloadItem = document.createElement('a');
