@@ -47,6 +47,12 @@ function createDownloadItem(item) {
         <span class="page-ctn-size-download">${item.size}</span>
     `;
 
+    // Add gold border and premium label if ispremium is true
+    if (item.ispremium === 'true') {
+        downloadItem.classList.add('premium-download'); // Add a class for styling
+        downloadItem.innerHTML += '<span class="premium-label">Premium</span>';
+    }
+
     return downloadItem;
 }
 

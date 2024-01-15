@@ -438,13 +438,49 @@ ul li a {
 .page-ctn-download-box #downloadicon {
     position: absolute;
     top: 0%;
-    left: 0%;
-    transform: translate(-30%, -30%);
+    right: 0%;
+    transform: translate(-10%, -5%);
     font-size: 8rem;
     opacity: .1;
 }
 
+.page-ctn-download-box.premium-download {
+    position: relative;
+}
 
+.premium-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 150%;
+    height: 150%;
+    background: #ffffff23;
+    animation: shimmer 5s infinite linear;
+    transition: transform 0.5s;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+        transform: translateX(1500%);
+    }
+}
+
+.premium-label {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: var(--accent1);
+    color: var(--text-dark);
+    padding: 4px 8px;
+    font-size: 12px;
+}
 
 
 /* leaderboard section */
