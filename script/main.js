@@ -46,10 +46,9 @@ function createDownloadItem(item) {
         </div>
         <span class="page-ctn-size-download">${item.size}</span>
     `;
-
-    // Add gold border and premium label if ispremium is true
+  
     if (item.ispremium === 'true') {
-        downloadItem.classList.add('premium-download'); // Add a class for styling
+        downloadItem.classList.add('premium-download');
         downloadItem.innerHTML += '<span class="premium-label">Premium</span>';
     }
 
@@ -159,7 +158,7 @@ function closeImagePopup() {
     var popupContainer = document.querySelector('.image-popup');
     if (popupContainer) {
         document.body.removeChild(popupContainer);
-        document.body.style.overflow = ''; // Re-enable scrolling when the popup is closed
+        document.body.style.overflow = '';
     }
 }
 
