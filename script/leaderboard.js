@@ -27,7 +27,7 @@ var leaderboardData = [
         number: 0, 
         userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/328794901_1257311118482826_199441960752094635_n.jpg?ccb=11-4&oh=01_AdQiTsIjA9FGuLchPzZkKkVW8I338HjRQB8b0_otByGx-A&oe=65B466D3&_nc_sid=e6ed6c&_nc_cat=107', 
         username: 'izha', 
-        instagramUsername: 'muhammadizhafathurahman', 
+        instagramUsername: ' ', 
         description: 'Phase 1 - pack 0 / 2'
         // Muhammad Izha Fathurahman
     },
