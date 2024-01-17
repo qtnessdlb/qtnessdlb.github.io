@@ -184,3 +184,48 @@ function closeModal(event) {
         modal.style.display = 'none';
     }
 }
+
+
+
+// text random
+function scrambleText(text) {
+    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+    let characters = text.split('');
+    for (let i = characters.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [characters[i], characters[j]] = [characters[j], characters[i]];
+    }
+    return characters.join('');
+}
+
+function getRandomSentence(length) {
+    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+    let sentence = '';
+    for (let i = 0; i < length; i++) {
+        sentence += charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+    return sentence;
+}
+
+function updateText(element) {
+    const sentenceLength = 8;
+    const originalText = getRandomSentence(sentenceLength);
+    const scrambledText = scrambleText(originalText);
+    element.textContent = scrambledText;
+}
+
+// Select all elements with class "yoscramble"
+const yoscrambleElements = document.querySelectorAll('.yoscramble');
+
+// Update the text for each element
+function updateAllText() {
+    yoscrambleElements.forEach(element => {
+        updateText(element);
+    });
+}
+
+// Update the text every 1 second
+setInterval(updateAllText, 80);
+
+// Initial update
+updateAllText();

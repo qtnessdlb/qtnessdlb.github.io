@@ -31,6 +31,7 @@
     --accent1-hover: #22c7a3;
     --accent2: #ff3852;
     --accent3: #7289da;
+    --accent3-hover: #98afff;
 
     /* setting spacing dan utility */
     /* === shadow === */
@@ -71,10 +72,10 @@
 /* Scrollbar Firefox */
 {scrollbar-width: thin;scrollbar-color: var(--accent1) var(--surface1);}
 /* Scrollbar Chrome, Edge, and Safari */
-::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar {width: 5px;}
 *::-webkit-scrollbar-track {background: var(--surface2);}
-*::-webkit-scrollbar-thumb {background-color: var(--surface3);border-radius: 0px;border: 0px none #ffffff00; transition: background-color 2s ease;}
-*::-webkit-scrollbar-thumb:hover {background-color: var(--accent1)}
+*::-webkit-scrollbar-thumb {background-color: var(--accent1);border-radius: 0px;border: 0px none #ffffff00; transition: background-color 2s ease;}
+*::-webkit-scrollbar-thumb:hover {background-color: var(--accent1-hover)}
 
 /* utility class */
 img {pointer-events: none;}
@@ -86,6 +87,8 @@ kbd{padding: var(--space-sm);background-color: var(--surface2);width: max-conten
 .brl-right {border-right: 1px solid var(--bg-white-dim);}
 .brl-top {border-top: 1px solid var(--bg-white-dim);}
 .brl-down {border-bottom: 1px solid var(--bg-white-dim);}
+.yoscramble {color: var(--accent3);&:hover {color: var(--accent3-hover);}}
+.divider {display: flex;align-items: center;&::before, &::after {flex: 1;content: '';padding: 1px;background-color: var(--accent1);margin: var(--gap1);}}
 span.animated1 {background: url("https://i.pinimg.com/originals/08/06/e5/0806e52ac6efa9fbf72cbb92fe6737cc.gif") repeat-y;-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: transparent;-webkit-animation: animated-1 80s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;}
 @-webkit-keyframes animated-1 {0% { background-position: 0% 50%; }100% { background-position: 100% 50%; }}
 
