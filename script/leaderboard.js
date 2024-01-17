@@ -17,18 +17,26 @@ var leaderboardData = [
     },
     { 
         number: 0, 
-        userImage: 'https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg', 
-        username: 'D.Ace', 
-        instagramUsername: 'jnl.dalfnnn_', 
+        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/353111909_947959676319175_6662605930404281510_n.jpg?ccb=11-4&oh=01_AdQYZ7CHSCp0V1TTTNlpjt3AkES8IoBokPXnZk5MpzfLjw&oe=65B45EDF&_nc_sid=e6ed6c&_nc_cat=103', 
+        username: 'zainudin_flytre', 
+        instagramUsername: 'zainudin_flytre', 
         description: 'Phase 1 - pack 0 / 2'
-        // dlfnn
+        // zainudin_flytre
     },
     { 
         number: 0, 
         userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/328794901_1257311118482826_199441960752094635_n.jpg?ccb=11-4&oh=01_AdQiTsIjA9FGuLchPzZkKkVW8I338HjRQB8b0_otByGx-A&oe=65B466D3&_nc_sid=e6ed6c&_nc_cat=107', 
         username: 'izha', 
-        instagramUsername: ' ', 
+        instagramUsername: 'muhammadizhafathurahman', 
         description: 'Phase 1 - pack 0 / 2'
         // Muhammad Izha Fathurahman
+    },
+    { 
+        number: 0, 
+        userImage: 'https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg', 
+        username: 'D.Ace', 
+        instagramUsername: 'jnl.dalfnnn_', 
+        description: 'Phase 1 - pack 0 / 2'
+        // dlfnn
     },
 ];
