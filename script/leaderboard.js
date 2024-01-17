@@ -9,7 +9,7 @@ var leaderboardData = [
     },
     { 
         number: 65, 
-        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/416485838_387379110416626_1468422329892190602_n.jpg?ccb=11-4&oh=01_AdSTA_osdqeDIlogjjpVIpSXNNKi_qyggk5pOnEcL3v_pg&oe=65ADE898&_nc_sid=e6ed6c&_nc_cat=101', 
+        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/419371204_713615214083415_6859620556285028994_n.jpg?ccb=11-4&oh=01_AdSsxPEi6M1XRHqsGro5BYMQBecuntDalwiOA-ngtF1Iag&oe=65B45498&_nc_sid=e6ed6c&_nc_cat=100', 
         username: 'harutoみずち', 
         instagramUsername: 'tsukumiharuto', 
         description: 'Phase 1 - Pack 1 / 2'
