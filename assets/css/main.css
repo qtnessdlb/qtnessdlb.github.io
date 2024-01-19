@@ -87,7 +87,7 @@ kbd{padding: var(--space-sm);background-color: var(--surface2);width: max-conten
 .brl-right {border-right: 1px solid var(--bg-white-dim);}
 .brl-top {border-top: 1px solid var(--bg-white-dim);}
 .brl-down {border-bottom: 1px solid var(--bg-white-dim);}
-.yoscramble {color: var(--accent3);&:hover {color: var(--accent3-hover);}}
+.pengacakhuruf {color: var(--accent3);&:hover {color: var(--accent3-hover);}}
 .divider {display: flex;align-items: center;&::before, &::after {flex: 1;content: '';padding: 1px;background-color: var(--accent1);margin: var(--gap1);}}
 span.animated1 {background: url("https://i.pinimg.com/originals/08/06/e5/0806e52ac6efa9fbf72cbb92fe6737cc.gif") repeat-y;-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: transparent;-webkit-animation: animated-1 80s linear infinite;-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;}
 @-webkit-keyframes animated-1 {0% { background-position: 0% 50%; }100% { background-position: 100% 50%; }}
@@ -636,6 +636,29 @@ span.highlight {
         font-weight: 600;
         color: var(--surface3);
         transition: all .2s ease-in-out;
+    }
+}
+.shiny-box {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        background-color: var(--surface1);
+        transform: scale(1.01);
+        outline: 2px solid gold;
+        outline-offset: 2px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 150%;
+        height: 150%;
+        background: #d5ff9123;
+        animation: shimmer 5s infinite linear;
+        transition: transform 0.5s;
     }
 }
 

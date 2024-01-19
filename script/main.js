@@ -214,18 +214,14 @@ function updateText(element) {
     element.textContent = scrambledText;
 }
 
-// Select all elements with class "yoscramble"
-const yoscrambleElements = document.querySelectorAll('.yoscramble');
+const pengacakhurufElements = document.querySelectorAll('.pengacakhuruf');
 
-// Update the text for each element
 function updateAllText() {
-    yoscrambleElements.forEach(element => {
+    pengacakhurufElements.forEach(element => {
         updateText(element);
     });
 }
 
-// Update the text every 1 second
+// timer
 setInterval(updateAllText, 80);
-
-// Initial update
 updateAllText();
