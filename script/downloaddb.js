@@ -1,6 +1,6 @@
 var downloadData = [
     {
-        ispremium: 'true',
+        ispremium: 'false',
         title: 'WP Startend - Pack 2',
         description: 'Hololive',
         author: 'By harutoみずち',
