@@ -1,6 +1,14 @@
 var downloadData = [
     {
         ispremium: 'true',
+        title: 'WP Startend - Pack 2',
+        description: 'Hololive',
+        author: 'By harutoみずち',
+        size: '2.8 MB',
+        link: './download/animepict9-ctn0-Startend_Hololive-pack2.zip'
+    },
+    {
+        ispremium: 'true',
         title: 'WP Shiina Mahiru - Pack 1',
         description: 'Otonari no Tenshi',
         author: 'By Admin',
