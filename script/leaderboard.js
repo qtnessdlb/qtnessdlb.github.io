@@ -18,7 +18,7 @@ var leaderboardData = [
     { 
         number: 0, 
         userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/353111909_947959676319175_6662605930404281510_n.jpg?ccb=11-4&oh=01_AdQYZ7CHSCp0V1TTTNlpjt3AkES8IoBokPXnZk5MpzfLjw&oe=65B45EDF&_nc_sid=e6ed6c&_nc_cat=103', 
-        username: 'zainudin_flytre', 
+        username: 'zainudin', 
         instagramUsername: 'zainudin_flytre', 
         description: 'Phase 1 - pack 0 / 2'
         // zainudin_flytre
