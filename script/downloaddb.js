@@ -1,6 +1,30 @@
 var downloadData = [
     {
         ispremium: 'false',
+        title: 'Kazama Iroha - Pack 1',
+        description: 'Hololive',
+        author: 'By harutoみずち',
+        size: '1.7 MB',
+        link: './download/animepict9-ctn0-Kazama_Iroha-Hololive-pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'March 7 - Pack 1',
+        description: 'Honkai: Star Rail',
+        author: 'By harutoみずち',
+        size: '2 MB',
+        link: './download/animepict9-ctn0-March7-Starrail-pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'Asada Shino - Pack 1',
+        description: 'Sword Art Online',
+        author: 'By harutoみずち',
+        size: '2 MB',
+        link: './download/animepict9-ctn0-Asada_Shino-SAO-pack1.zip'
+    },
+    {
+        ispremium: 'false',
         title: 'WP Startend - Pack 3',
         description: 'Hololive',
         author: 'By izha',

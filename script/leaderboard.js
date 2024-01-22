@@ -1,19 +1,19 @@
 var leaderboardData = [
     { 
+        number: 450, 
+        userImage: 'https://pps.whatsapp.net/v/t61.24694-24/405183837_330799403017499_3669056780112851839_n.jpg?ccb=11-4&oh=01_AdQ_0vMoQq-na-P5_x9gIIQA_EMxg9I7jlw4Obsnwx0-Lw&oe=65B8CF72&_nc_sid=e6ed6c&_nc_cat=101', 
+        username: 'Reiyu インドラ', 
+        instagramUsername: 'lelouch_official77', 
+        description: 'Phase 2 - Completed'
+        // IndraOne_
+    },
+    { 
         number: 160, 
         userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/419371204_713615214083415_6859620556285028994_n.jpg?ccb=11-4&oh=01_AdSsxPEi6M1XRHqsGro5BYMQBecuntDalwiOA-ngtF1Iag&oe=65B45498&_nc_sid=e6ed6c&_nc_cat=100', 
         username: 'harutoみずち', 
         instagramUsername: 'tsukumiharuto', 
         description: 'Phase 2 - 0 / 3'
         // epan / tsukumiharuto
-    },
-    { 
-        number: 150, 
-        userImage: 'https://pps.whatsapp.net/v/t61.24694-24/405183837_330799403017499_3669056780112851839_n.jpg?ccb=11-4&oh=01_AdQ_0vMoQq-na-P5_x9gIIQA_EMxg9I7jlw4Obsnwx0-Lw&oe=65B8CF72&_nc_sid=e6ed6c&_nc_cat=101', 
-        username: 'Reiyu インドラ', 
-        instagramUsername: 'lelouch_official77', 
-        description: 'Phase 2 - 0 / 3'
-        // IndraOne_
     },
     { 
         number: 150, 
