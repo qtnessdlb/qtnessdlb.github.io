@@ -1,5 +1,21 @@
 var downloadData = [
     {
+        ispremium: 'false',
+        title: 'WP Startend - Pack 3',
+        description: 'Hololive',
+        author: 'By izha',
+        size: '14 MB',
+        link: './download/animepict9-ctn0-Startend_Hololive-pack3.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Terakomari - Pack 3',
+        description: 'Hikikomari Kyuuketsuki',
+        author: 'By izha',
+        size: '9.8 MB',
+        link: './download/animepict9-ctn0-Terakomari_Gandesblood-pack3.zip'
+    },
+    {
         ispremium: 'true',
         title: 'Nakiri Ayame - Pack 1',
         description: 'Hololive',

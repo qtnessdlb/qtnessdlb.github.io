@@ -1,5 +1,13 @@
 var leaderboardData = [
     { 
+        number: 160, 
+        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/419371204_713615214083415_6859620556285028994_n.jpg?ccb=11-4&oh=01_AdSsxPEi6M1XRHqsGro5BYMQBecuntDalwiOA-ngtF1Iag&oe=65B45498&_nc_sid=e6ed6c&_nc_cat=100', 
+        username: 'harutoみずち', 
+        instagramUsername: 'tsukumiharuto', 
+        description: 'Phase 2 - 0 / 3'
+        // epan / tsukumiharuto
+    },
+    { 
         number: 150, 
         userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/405183837_330799403017499_3669056780112851839_n.jpg?ccb=11-4&oh=01_AdT6cUwdNlpk47XtCq5wYo2UFvOB1iE5rBRKmxULXeStbw&oe=65AD9AB2&_nc_sid=e6ed6c&_nc_cat=101', 
         username: 'Reiyu インドラ', 
@@ -9,11 +17,11 @@ var leaderboardData = [
     },
     { 
         number: 150, 
-        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/419371204_713615214083415_6859620556285028994_n.jpg?ccb=11-4&oh=01_AdSsxPEi6M1XRHqsGro5BYMQBecuntDalwiOA-ngtF1Iag&oe=65B45498&_nc_sid=e6ed6c&_nc_cat=100', 
-        username: 'harutoみずち', 
-        instagramUsername: 'tsukumiharuto', 
+        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/328794901_1257311118482826_199441960752094635_n.jpg?ccb=11-4&oh=01_AdQiTsIjA9FGuLchPzZkKkVW8I338HjRQB8b0_otByGx-A&oe=65B466D3&_nc_sid=e6ed6c&_nc_cat=107', 
+        username: 'izha', 
+        instagramUsername: 'muhammadizhafathurahman', 
         description: 'Phase 2 - 0 / 3'
-        // epan / tsukumiharuto
+        // Muhammad Izha Fathurahman
     },
     { 
         number: 0, 
@@ -22,14 +30,6 @@ var leaderboardData = [
         instagramUsername: 'zainudin_flytre', 
         description: 'Phase 1 & 2 - 0 / 5'
         // zainudin_flytre
-    },
-    { 
-        number: 0, 
-        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/328794901_1257311118482826_199441960752094635_n.jpg?ccb=11-4&oh=01_AdQiTsIjA9FGuLchPzZkKkVW8I338HjRQB8b0_otByGx-A&oe=65B466D3&_nc_sid=e6ed6c&_nc_cat=107', 
-        username: 'izha', 
-        instagramUsername: 'muhammadizhafathurahman', 
-        description: 'Phase 1 & 2 - 0 / 5'
-        // Muhammad Izha Fathurahman
     },
     { 
         number: 0, 
