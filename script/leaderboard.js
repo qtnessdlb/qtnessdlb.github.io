@@ -9,7 +9,7 @@ var leaderboardData = [
     },
     { 
         number: 150, 
-        userImage: 'https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/405183837_330799403017499_3669056780112851839_n.jpg?ccb=11-4&oh=01_AdT6cUwdNlpk47XtCq5wYo2UFvOB1iE5rBRKmxULXeStbw&oe=65AD9AB2&_nc_sid=e6ed6c&_nc_cat=101', 
+        userImage: 'https://pps.whatsapp.net/v/t61.24694-24/405183837_330799403017499_3669056780112851839_n.jpg?ccb=11-4&oh=01_AdQ_0vMoQq-na-P5_x9gIIQA_EMxg9I7jlw4Obsnwx0-Lw&oe=65B8CF72&_nc_sid=e6ed6c&_nc_cat=101', 
         username: 'Reiyu インドラ', 
         instagramUsername: 'lelouch_official77', 
         description: 'Phase 2 - 0 / 3'
