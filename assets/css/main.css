@@ -14,7 +14,7 @@
     --surface-grid: #fafafa05;
     
     --accent1: #DE7F28;
-        --accent1-hover: #ec9544;
+        --accent1-hover: #ffa959;
 
     --col-text-white: #fafafa;
         --col-text-white-05: hsla(0, 0%, 98%, 0.03);
@@ -42,6 +42,8 @@
     --space-xxxxlg: 100px;
 
     /* radius */
+    --rad-xxsm: 4px;
+    --rad-xsm: 8px;
     --rad-sm: 12px;
     --rad-md: 24px;
     --rad-xl: 32px;
@@ -93,7 +95,7 @@
 html {
     position: relative;
     font-size: 95%;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 
 body {
@@ -106,6 +108,7 @@ body {
     background-image:
       linear-gradient(to right, var(--surface-grid) 1px, transparent 1px),
       linear-gradient(to bottom, var(--surface-grid) 1px, transparent 1px);
+    scroll-behavior: smooth;
 }
 
 /* header */
@@ -172,6 +175,13 @@ main {
 .section-hero {
     /* min-height: 100vh; */
     margin-top: 8rem;
+}
+
+.content-box {
+    width: 100%;
+    margin: auto;
+    gap: var(--space-lg);
+    /* flex-direction: column; */
 }
 
 /* section 2 */
@@ -308,7 +318,7 @@ main {
 
 /* ================== event page =================== */
 .wrapper {
-    min-width: var(--max-width);
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -357,6 +367,14 @@ main {
         transform: translateY(0%);
         transition: var(--transition-area);
     }
+
+    &:hover::before {
+        border-top: 10px solid var(--col-text-white-50);
+    }
+    &:hover::after {
+        height: 2px;
+        background-color: var(--col-text-white-50);
+    }
 }
 
 .tab-link.active {
@@ -372,7 +390,7 @@ main {
         height: 0; 
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-top: 10px solid var(--accent1-hover);
+        border-top: 10px solid var(--accent1);
         margin-inline: auto;
         transform: translateY(0);
         opacity: 1;
@@ -384,8 +402,15 @@ main {
         width: 100%;
         height: 2px;
         margin: auto;
-        background-color: var(--accent1-hover);
+        background-color: var(--accent1);
         transform: translateY(0);
+    }
+    &:hover::before {
+        border-top: 10px solid var(--accent1-hover);
+    }
+    &:hover::after {
+        height: 2px;
+        background-color: var(--accent1-hover);
     }
 }
 
@@ -521,8 +546,117 @@ main {
 }
 
 
+/* =========== Leaderboard page ============= */
+.leaderboard-card-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-inline: auto;
+    width: 60%;
+    /* outline: var(--debug1); */
+}
 
-/* footer section */
+.lb-card {
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: stretch;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    width: 100%;
+    border-radius: var(--rad-sm);
+    color: var(--col-text-white);
+    background-color: var(--surface2);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        outline: 2px solid var(--col-text-white-20);
+        /* outline: 2px solid var(--accent1-hover); */
+        background-color: var(--surface3);
+    }
+
+    &:hover::before {
+        background-color: var(--accent1-hover);
+    }
+
+    &::before {
+        --deco-1: 1.5rem;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -.7rem;
+        margin-block: auto;
+        width: var(--deco-1);
+        height: var(--deco-1);
+        background-color: var(--surface2);
+        border: 5px solid var(--surface1);
+        transform: rotateZ(45deg);
+        transition: all .3s ease-in-out;
+    }
+}
+
+.lb-author,
+.lb-point-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.lb-point-group {
+    align-items: end;
+    margin-left: auto;
+}
+
+.lb-point {
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xxsm);
+    /* top: var(--space-sm); */
+    /* left: var(--space-sm); */
+    padding: var(--space-xsm);
+    width: fit-content;
+    color: var(--surface2);
+    background-color: var(--accent1);
+    border-radius: var(--rad-sm);
+}
+
+.lb-user-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xsm);
+    width: 100%;
+    font-size: 1em;
+}
+
+.lb-task-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xxsm) var(--space-msm);
+    background-color: var(--surface4);
+    border-radius: var(--rad-xsm);
+}
+
+.lb-user-img {
+    width: 100%;
+    max-width: 4rem;
+    border-radius: var(--rad-sm);
+}
+
+.lb-user-social-link {
+    color: var(--accent1);
+}
+
+
+
+
+/* ============ footer section ============== */
 footer {
     position: relative;
     min-width: 100%;
@@ -536,7 +670,6 @@ footer {
 footer .column {
     width: 100%;
     max-width: 20%;
-    /* Adjust the maximum width as needed */
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -569,7 +702,6 @@ footer .title-2 {
 footer .desc {
     color: var(--col-text-white-50);
 }
-
 
 .footer-link-group {
     display: flex;
@@ -619,6 +751,7 @@ footer .footer-link-item a {
     }
 }
 
+/* =========== Media Query ============== */
 @media screen and (max-width: 768px) {
     html {
         font-size: 80%;
@@ -696,7 +829,6 @@ footer .footer-link-item a {
         width: 100%;
         height: auto;
         gap: var(--space-sm);
-        /* padding-block: var(--space-lg); */
     }
     
     .navigasi-mobile ul .nav-item {
@@ -717,7 +849,6 @@ footer .footer-link-item a {
         padding: var(--space-sm) 0;
         gap: var(--space-sm);
         color: var(--col-text-white-50);
-        /* background-color: var(--col-text-white-05); */
         text-decoration: none;
 
         &:hover {
@@ -741,7 +872,7 @@ footer .footer-link-item a {
     }
 
 
-    /* event page */
+    /* ========== event page =========== */
     .wrapper {
         min-width: 100%;
         max-width: 100%;
@@ -765,13 +896,6 @@ footer .footer-link-item a {
 
 
     /* =========== download page ============= */
-    .content-box {
-        width: 100%;
-        margin: auto;
-        gap: var(--space-lg);
-        /* flex-direction: column; */
-    }
-    
     .download-wrap {
         display: flex;
         flex-wrap: wrap;

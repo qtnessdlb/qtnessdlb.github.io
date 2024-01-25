@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error loading footer:', error));
 });
 
-// Optional: Add event listener for window resize to dynamically switch between mobile and desktop headers
 window.addEventListener('resize', function () {
     const headerPath = window.innerWidth < 450 ? '/components/mobile-header.html' : '/components/header.html';
 
@@ -48,16 +47,16 @@ window.addEventListener('resize', function () {
 });
 
 // clean link
-if (window.location.pathname.endsWith('.html')) {
-    var newPath = window.location.pathname.replace(/\.html$/, '');
-    history.replaceState({}, '', newPath);
-    document.title = document.title.replace(/\.html$/, '');
-}
+// if (window.location.pathname.endsWith('.html')) {
+//     var newPath = window.location.pathname.replace(/\.html$/, '');
+//     history.replaceState({}, '', newPath);
+//     document.title = document.title.replace(/\.html$/, '');
+// }
 
-if (window.location.pathname.endsWith('/')) {
-    var newPath = window.location.pathname.slice(0, -1);
-    history.replaceState({}, '', newPath);
-}
+// if (window.location.pathname.endsWith('/')) {
+//     var newPath = window.location.pathname.slice(0, -1);
+//     history.replaceState({}, '', newPath);
+// }
 
 // tabing
 $(document).ready(function() {
@@ -87,6 +86,11 @@ $(document).ready(function() {
             .find(tabContent).eq(tabIndex).addClass('active');
     });
 });
+
+
+// sound handler
+
+
 
 // mobile
 $(document).ready(function() {
@@ -168,3 +172,50 @@ searchInput.addEventListener('input', function () {
 document.addEventListener('DOMContentLoaded', function () {
     appendDownloadItems(downloadData);
 });
+
+
+// leaderboarddata handler
+function createLeaderboardCardHTML(data) {
+    return `
+        <a href="#" class="lb-card">
+            <img src="${data.imgSrc}" alt="user-img" class="lb-user-img">
+            <div class="lb-author">
+                <h4 class="title">${data.userName}</h4>
+                <p class="lb-user-social-link">${data.socialLink}</p>
+            </div>
+            <div class="lb-point-group">
+                <span class="lb-point"><i class="ri-star-s-fill"></i>${data.points} Point</span>
+                <p class="lb-user-desc">${data.userDesc} <span class="lb-task-counter">${data.taskCounter}</span></p>
+            </div>
+        </a>`;
+}
+
+// Function to append a leaderboard card to the container
+function appendLeaderboardCard(container, data) {
+    var cardHTML = createLeaderboardCardHTML(data);
+    container.innerHTML += cardHTML;
+}
+
+// Load data asynchronously after the DOM has been fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    loadData();
+});
+
+// Load data asynchronously
+async function loadData() {
+    try {
+        // Fetch data from external file
+        var response = await fetch('/dataleaderboard.js');
+        var data = await response.json();
+
+        // Get the container
+        var cardContainer = document.getElementById('leaderboard-card-group');
+
+        // Loop through the data and append leaderboard cards
+        data.leaderboardData.forEach(item => {
+            appendLeaderboardCard(cardContainer, item);
+        });
+    } catch (error) {
+        console.error('Error loading data:', error);
+    }
+}

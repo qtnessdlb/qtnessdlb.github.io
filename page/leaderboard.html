@@ -23,11 +23,11 @@
     <!-- <meta name="msapplication-config" content="/favicons/browserconfig.xml"> -->
 
     <!-- JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- icon CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
+    <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" />
 
     <link rel="stylesheet" href="/assets/css/main.css">
 
@@ -42,6 +42,7 @@
             <div class="_contain">
                 <div class="_c-col">
                     <h1 class="hero-title">Members <span class="highlight">Leaderboard</span></h1>
+                    <h4 class="title">Last Winner: <span class="highlight">Rebellion</span></h4>
                 </div>
             </div>
         </section>
@@ -51,7 +52,35 @@
                 <div class="_c-col">
 
                     <div class="content-box">
-                        <p>Gini nih gengs, ini isinya nanti penjelasan tentang semua hal terkait komunitas Qtness dan juga Animepict9. Buat kalian yang jago bat ngarang sama ngetik, mungkin bisa memberikan saran-saran dan kata-kata untuk memenuhi page yang sunyi dan sepi di ruang hampa ini~</p>
+
+                        <div class="leaderboard-card-group" id="leaderboard-card-group">
+
+                            <!-- <a href="#" class="lb-card" id="leaderboard-card">
+                                <img src="//source.unsplash.com/random/100x100/?tech" alt="user-img-1" class="lb-user-img">
+                                <div class="lb-author">
+                                    <h4 class="title" id="lb-user-name">Example Name</h4>
+                                    <p class="lb-user-social-link">social link 1</p>
+                                </div>
+                                <div class="lb-point-group">
+                                    <span class="lb-point"><i class="ri-star-s-fill"></i>400 Point</span>
+                                    <p class="lb-user-desc">Completed Phase 3 <span class="lb-task-counter">2 / 3</span></p>
+                                </div>   
+                            </a>
+                            
+                            <a href="#" class="lb-card" id="leaderboard-card">
+                                <img src="//source.unsplash.com/random/100x100/?nature" alt="user-img-2" class="lb-user-img" id="lb-user-img">
+                                <div class="lb-author">
+                                    <h4 class="title" id="lb-user-name">Example Long Name</h4>
+                                    <p class="lb-user-social-link">social link 2</p>
+                                </div>
+                                <div class="lb-point-group">
+                                    <span class="lb-point"><i class="ri-star-s-fill"></i>220 Point</span>
+                                    <p class="lb-user-desc">Phase 1 <span class="lb-task-counter">2 / 3</span></p>
+                                </div>                                
+                            </a> -->
+
+                        </div>
+
                     </div>
                     
                 </div>
@@ -60,7 +89,8 @@
     </main>
     <footer id="mainFooter" class="footer"></footer>
     
-    <script src="../assets/script/main.js"></script>
+    <script defer src="/assets/script/main.js"></script>
+    <script src="/assets/script/dataleaderboard.js"></script>
     
 </body>
 
