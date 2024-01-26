@@ -91,42 +91,57 @@ $(document).ready(function() {
 // sound handler
 
 // cdEvent handler
-var cdEvent;
-
-var compareDate = new Date();
-compareDate.setDate(compareDate.getDate() + 2);
-
-cdEvent = setInterval(function() {
-  timeBetweenDates(compareDate);
-}, 1000);
-
-function timeBetweenDates(toDate) {
-  var dateEntered = toDate;
-  var now = new Date();
-  var difference = dateEntered.getTime() - now.getTime();
-
-  if (difference <= 0) {
-
-    // cdEvent done
-    clearInterval(cdEvent);
+class Countdown {
+    constructor(el){
+      this.el = el;
+      this.targetDate = new Date(el.getAttribute("date-time"));
+      this.createCountDownParts()
+      this.countdownFunction();
+      this.countdownLoopId = setInterval(this.countdownFunction.bind(this), 1000)
+    }
+    createCountDownParts(){
+      ["days", "hours", "minutes", "seconds"].forEach(part => {
+        const partEl = document.createElement("div");
+        partEl.classList.add("part", part);
+        const textEl = document.createElement("div");
+        textEl.classList.add("text");
+        textEl.innerText = part;
+        const numberEl = document.createElement("div");
+        numberEl.classList.add("number");
+        numberEl.innerText = 0;
+        partEl.append(numberEl, textEl);
+        this.el.append(partEl);
+        this[part] = numberEl;
+      })
+    }
   
-  } else {
+    countdownFunction(){
+      const currentDate = new Date();    
+      if(currentDate > this.targetDate) return clearInterval(this.intervalId);
+      const remaining = this.getRemaining(this.targetDate, currentDate);
+      Object.entries(remaining).forEach(([part,value]) => {
+        this[part].style.setProperty("--value", value)
+        this[part].innerText = value
+      })  
+    }
     
-    var seconds = Math.floor(difference / 1000);
-    var minutes = Math.floor(seconds / 60);
-    var hours = Math.floor(minutes / 60);
-    var days = Math.floor(hours / 24);
-
-    hours %= 24;
-    minutes %= 60;
-    seconds %= 60;
-
-    $("#days").text(days);
-    $("#hours").text(hours);
-    $("#minutes").text(minutes);
-    $("#seconds").text(seconds);
+    getRemaining(target, now){
+      let seconds = Math.floor((target - (now))/1000);
+      let minutes = Math.floor(seconds/60);
+      let hours = Math.floor(minutes/60);
+      let days = Math.floor(hours/24);
+      hours = hours-(days*24);
+      minutes = minutes-(days*24*60)-(hours*60);
+      seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+      return { days, hours, minutes, seconds }      
+    }
+  
   }
-}
+  
+  const countdownEls= document.querySelectorAll(".countdown") || [];
+  countdownEls.forEach(countdownEl => new Countdown(countdownEl))
+  
+
 
 
 

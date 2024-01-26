@@ -445,27 +445,36 @@ main {
 }
 
 /* cdEvent */
-#cdEvent {
+time#cdEvent {
+    --pos-timer-event-X: var(--space-md);
+    --pos-timer-event-Y: 2px ;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: fit-content;
+    top: var(--pos-timer-event-Y);
+    right: var(--pos-timer-event-X);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
     padding: var(--space-sm);
+    gap: var(--space-md);
+    border-radius: var(--rad-sm);
     color: var(--col-text-white);
     background-color: var(--surface2);
-    border-radius: var(--rad-xsm);
-    font-size: .8em;
+    font-weight: 600;
+    text-align: center;
     cursor: pointer;
+    /* outline: var(--debug1); */
 }
 
-#cdEvent span {
-    font-size: 1.2em;
-    color: var(--col-text-white);
-    margin: 0 3px 0 15px;
+time#cdEvent > .part {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xsm);
 }
 
-#cdEvent span:first-child {
-    margin-left: 0;
+time#cdEvent > .part >.text {
+    font-size: .8em;
+    color: var(--col-text-white-50);
 }
 
 /* actual quest */
@@ -943,6 +952,17 @@ footer .footer-link-item a {
         width: 100%;
         padding: var(--space-sm) var(--space-xsm);
         overflow: visible;
+    }
+
+    time#cdEvent {
+        --pos-timer-event-X: 0;
+        --pos-timer-event-Y: 0;
+        position: relative;
+        top: var(--pos-timer-event-Y);
+        right: var(--pos-timer-event-X);
+        max-width: 100%;
+        padding: var(--space-sm);
+        gap: var(--space-md);
     }
 
 
