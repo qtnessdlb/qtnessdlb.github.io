@@ -7,7 +7,7 @@ var users = [
         imageUrl: "https://source.unsplash.com/nature/100x100",
         points: 455,
         completedTasks: 3,
-        goingTasks: 5,
+        goingTasks: 3,
         phaseProgress: "Completed Phase 2"
     },
     {
