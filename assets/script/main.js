@@ -47,16 +47,16 @@ window.addEventListener('resize', function () {
 });
 
 // clean link
-if (window.location.pathname.endsWith('.html')) {
-    var newPath = window.location.pathname.replace(/\.html$/, '');
-    history.replaceState({}, '', newPath);
-    document.title = document.title.replace(/\.html$/, '');
-}
+// if (window.location.pathname.endsWith('.html')) {
+//     var newPath = window.location.pathname.replace(/\.html$/, '');
+//     history.replaceState({}, '', newPath);
+//     document.title = document.title.replace(/\.html$/, '');
+// }
 
-if (window.location.pathname.endsWith('/')) {
-    var newPath = window.location.pathname.slice(0, -1);
-    history.replaceState({}, '', newPath);
-}
+// if (window.location.pathname.endsWith('/')) {
+//     var newPath = window.location.pathname.slice(0, -1);
+//     history.replaceState({}, '', newPath);
+// }
 
 // tabing
 $(document).ready(function() {
@@ -201,59 +201,56 @@ function filterDownloadItems(searchText) {
     });
 }
 
-const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('input', function () {
-    const searchText = this.value.trim();
-    filterDownloadItems(searchText);
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     appendDownloadItems(downloadData);
+    loadLeaderboard(); // Call the loadLeaderboard function here
 });
-
 
 // leaderboarddata handler
-function createLeaderboardCardHTML(data) {
-    return `
-        <a href="#" class="lb-card">
-            <img src="${data.imgSrc}" alt="user-img" class="lb-user-img">
-            <div class="lb-author">
-                <h4 class="title">${data.userName}</h4>
-                <p class="lb-user-social-link">${data.socialLink}</p>
-            </div>
-            <div class="lb-point-group">
-                <span class="lb-point"><i class="ri-star-s-fill"></i>${data.points} Point</span>
-                <p class="lb-user-desc">${data.userDesc} <span class="lb-task-counter">${data.taskCounter}</span></p>
-            </div>
-        </a>`;
-}
-
-// Function to append a leaderboard card to the container
-function appendLeaderboardCard(container, data) {
-    var cardHTML = createLeaderboardCardHTML(data);
-    container.innerHTML += cardHTML;
-}
-
-// Load data asynchronously after the DOM has been fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-    loadData();
+    appendDownloadItems(downloadData);
+    loadLeaderboard();
 });
 
-// Load data asynchronously
-async function loadData() {
-    try {
-        // Fetch data from external file
-        var response = await fetch('/dataleaderboard.js');
-        var data = await response.json();
+const script = document.createElement('script');
+script.src = '/assets/script/dataleaderboard.js';
+script.onload = function () {
+    loadLeaderboard();
+};
+document.head.appendChild(script);
 
-        // Get the container
-        var cardContainer = document.getElementById('leaderboard-card-group');
+function loadLeaderboard() {
+    var leaderboardCardGroup = document.getElementById("leaderboard-card-group");
 
-        // Loop through the data and append leaderboard cards
-        data.leaderboardData.forEach(item => {
-            appendLeaderboardCard(cardContainer, item);
-        });
-    } catch (error) {
-        console.error('Error loading data:', error);
+    if (!leaderboardCardGroup) {
+        console.error("Element with id 'leaderboard-card-group' not found.");
+        return;
     }
+
+    var fragment = document.createDocumentFragment();
+
+    users.forEach(function (user) {
+        var userHtml = `
+            <a href="//${user.socialLink}/${user.username}" class="lb-card" id="leaderboard-card">
+                <img src="${user.imageUrl}" alt="user-img" class="lb-user-img">
+                <div class="lb-author">
+                    <h4 class="title" id="lb-user-name">${user.name}</h4>
+                    <p class="lb-user-social-link">@${user.username}</p>
+                </div>
+                <div class="lb-point-group">
+                    <span class="lb-point"><i class="ri-star-s-fill"></i>${user.points} Point</span>
+                    <p class="lb-user-desc">${user.phaseProgress} <span class="lb-task-counter">${user.completedTasks} / ${user.goingTasks}</span></p>
+                </div>   
+            </a>
+        `;
+
+        var tempDiv = document.createElement("div");
+        tempDiv.innerHTML = userHtml;
+
+        while (tempDiv.firstChild) {
+            fragment.appendChild(tempDiv.firstChild);
+        }
+    });
+
+    leaderboardCardGroup.appendChild(fragment);
 }
