@@ -136,7 +136,15 @@ table {
 }
 
 a {
+    font-family: inherit;
     text-decoration: none;
+    color: inherit;
+}
+
+b {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
 }
 
 *,

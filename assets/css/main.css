@@ -91,6 +91,14 @@
     background: var(--accent1);
 }
 
+/* link color default */
+a {
+    color: var(--accent1);
+    &:hover {
+        color: var(--accent1-hover);
+    }
+}
+
 /* body */
 html {
     position: relative;
@@ -594,7 +602,6 @@ main {
 .lb-card {
     position: relative;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: stretch;
     gap: var(--space-sm);
@@ -608,7 +615,6 @@ main {
 
     &:hover {
         outline: 2px solid var(--col-text-white-20);
-        /* outline: 2px solid var(--accent1-hover); */
         background-color: var(--surface3);
     }
 
@@ -936,6 +942,29 @@ footer .footer-link-item a {
         width: 100%;
         padding: var(--space-sm) var(--space-xsm);
         overflow: visible;
+    }
+
+
+    /* =========== Leaderboard Page =========== */
+    .leaderboard-card-group {
+        width: 100%;
+    }
+
+    .lb-card {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .lb-point-group {
+        margin-left: 0;
+        align-items: start;
+    }
+
+    .lb-point {
+        position: absolute;
+        right: var(--space-sm);
+        top: var(--space-sm);
+        border-radius: var(--rad-xxsm);
     }
 
 
