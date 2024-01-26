@@ -1,25 +1,49 @@
 var downloadData = [
     {
         ispremium: 'false',
-        title: 'Kazama Iroha - Pack 1',
+        title: 'WP Kazama Iroha - Pack 2',
         description: 'Hololive',
         author: 'By harutoみずち',
+        size: '3 MB',
+        link: '/downloads/animepict9-ctn0-Kazama_Iroha-Hololive-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP March7 - Pack 2',
+        description: 'Honkai: Star Rail',
+        author: 'By harutoみずち',
+        size: '2 MB',
+        link: '/downloads/animepict9-ctn0-March7-Starrail-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Asada Shino - Pack 2',
+        description: 'Sword Art Online',
+        author: 'By harutoみずち',
+        size: '2 MB',
+        link: '/downloads/animepict9-ctn0-Asada_Shino-SAO-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Kazama Iroha - Pack 1',
+        description: 'Hololive',
+        author: 'By Reiyu インドラ',
         size: '1.7 MB',
         link: '/downloads/animepict9-ctn0-Kazama_Iroha-Hololive-pack1.zip'
     },
     {
         ispremium: 'false',
-        title: 'March 7 - Pack 1',
+        title: 'WP March7 - Pack 1',
         description: 'Honkai: Star Rail',
-        author: 'By harutoみずち',
+        author: 'By Reiyu インドラ',
         size: '2 MB',
         link: '/downloads/animepict9-ctn0-March7-Starrail-pack1.zip'
     },
     {
         ispremium: 'false',
-        title: 'Asada Shino - Pack 1',
+        title: 'WP Asada Shino - Pack 1',
         description: 'Sword Art Online',
-        author: 'By harutoみずち',
+        author: 'By Reiyu インドラ',
         size: '2 MB',
         link: '/downloads/animepict9-ctn0-Asada_Shino-SAO-pack1.zip'
     },
@@ -41,7 +65,7 @@ var downloadData = [
     },
     {
         ispremium: 'true',
-        title: 'Nakiri Ayame - Pack 1',
+        title: 'WP Nakiri Ayame - Pack 1',
         description: 'Hololive',
         author: 'By Admin',
         size: '55.5 MB',

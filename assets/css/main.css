@@ -559,7 +559,7 @@ main {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 150%;
+    width: 250%;
     height: 150%;
     background: #ffffff23;
     animation: shimmer 5s infinite linear;
