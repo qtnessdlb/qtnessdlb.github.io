@@ -201,11 +201,6 @@ function filterDownloadItems(searchText) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    appendDownloadItems(downloadData);
-    loadLeaderboard(); // Call the loadLeaderboard function here
-});
-
 // leaderboarddata handler
 document.addEventListener('DOMContentLoaded', function () {
     appendDownloadItems(downloadData);
