@@ -318,9 +318,12 @@ main {
 
 /* ================== event page =================== */
 .wrapper {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
+    gap: var(--space-lg);
 }
 
 .tab-area {
@@ -414,17 +417,47 @@ main {
     }
 }
 
+.tab-wrap {
+    position: relative;
+}
+
 .tab-content {
     display: none;
-    color: #d8d6d6;
+    /* color: #d8d6d6; */
 }
 
 .tab-content.active {
+    position: relative;
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: var(--space-md);
-    padding: 20px;
+    padding: var(--space-md);
     border-radius: 5px;
+}
+
+/* cdEvent */
+#cdEvent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    padding: var(--space-sm);
+    color: var(--col-text-white);
+    background-color: var(--surface2);
+    border-radius: var(--rad-xsm);
+    font-size: .8em;
+    cursor: pointer;
+}
+
+#cdEvent span {
+    font-size: 1.2em;
+    color: var(--col-text-white);
+    margin: 0 3px 0 15px;
+}
+
+#cdEvent span:first-child {
+    margin-left: 0;
 }
 
 /* actual quest */
@@ -445,6 +478,8 @@ main {
     }
     
 }
+
+    
 
 
 /* ================== download page =================== */
@@ -578,21 +613,21 @@ main {
     }
 
     &:hover::before {
-        background-color: var(--accent1-hover);
+        background-color: var(--accent1);
     }
 
     &::before {
-        --deco-1: 1.5rem;
+        --deco-1: 1rem;
         content: '';
         position: absolute;
         top: 0;
         bottom: 0;
-        left: -.7rem;
+        left: -.5rem;
         margin-block: auto;
         width: var(--deco-1);
         height: var(--deco-1);
         background-color: var(--surface2);
-        border: 5px solid var(--surface1);
+        outline: 5px solid var(--surface1);
         transform: rotateZ(45deg);
         transition: all .3s ease-in-out;
     }
@@ -620,6 +655,7 @@ main {
     /* left: var(--space-sm); */
     padding: var(--space-xsm);
     width: fit-content;
+    font-weight: 600;
     color: var(--surface2);
     background-color: var(--accent1);
     border-radius: var(--rad-sm);
@@ -886,11 +922,19 @@ footer .footer-link-item a {
         display: flex;
         align-items: center;
         justify-content: center;
+        min-width: 100%;
         overflow: visible;
     }
     
+    .tab-content.active {
+        gap: var(--space-sm);
+        padding: var(--space-xxsm);
+        border-radius: var(--rad-xxsm);
+    }
+    
     .tab-link  {
-        padding: var(--space-xsm) var(--space-sm);
+        width: 100%;
+        padding: var(--space-sm) var(--space-xsm);
         overflow: visible;
     }
 
