@@ -53,10 +53,10 @@ window.addEventListener('resize', function () {
 //     document.title = document.title.replace(/\.html$/, '');
 // }
 
-// if (window.location.pathname.endsWith('/')) {
-//     var newPath = window.location.pathname.slice(0, -1);
-//     history.replaceState({}, '', newPath);
-// }
+if (window.location.pathname.endsWith('/')) {
+    var newPath = window.location.pathname.slice(0, -1);
+    history.replaceState({}, '', newPath);
+}
 
 // tabing
 $(document).ready(function() {
@@ -241,7 +241,7 @@ function loadLeaderboard() {
 
     users.forEach(function (user) {
         var userHtml = `
-            <a href="//${user.socialLink}/${user.username}" class="lb-card" id="leaderboard-card">
+            <a target="_blank" href="//${user.socialLink}/${user.username}" class="lb-card" id="leaderboard-card">
                 <img src="${user.imageUrl}" alt="user-img" class="lb-user-img">
                 <div class="lb-author">
                     <h4 class="title" id="lb-user-name">${user.name}</h4>

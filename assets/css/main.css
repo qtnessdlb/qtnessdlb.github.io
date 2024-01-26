@@ -54,6 +54,13 @@
     --logo-default: 6rem;
     --max-width: 1440px;
 
+    /* transition */
+    --ease-1: all .1s ease;
+    --ease-2: all .3s ease;
+    --ease-3: all .5s ease;
+    --ease-4: all .7s ease;
+    --ease-5: all 1s ease;
+
     /* debug */
     --debug1: 2px dashed yellow;
     --debug2: 2px dashed skyblue;
@@ -153,7 +160,7 @@ ul li .nav-item-link {
     font-size: var(--fs-p);
     font-weight: 400;
     color: var(--col-text-white);
-    transition: all .3s ease-in-out;
+    transition: var(--ease-1);
     
     &:hover {
         color: var(--accent1-hover);
@@ -254,7 +261,7 @@ main {
     border: 5px solid var(--surface1);
     padding: var(--icn-size);
     transform: rotate(45deg);
-    transition: all .3s ease-in-out;
+    transition: var(--ease-1);
     cursor: pointer;
     z-index: 20;
     
@@ -306,7 +313,7 @@ main {
     padding: var(--space-md);
     background-color: var(--surface2);
     border-radius: var(--rad-sm);
-    transition: all .1s ease-out;
+    transition: var(--ease-1);
     cursor: pointer;
     
     &:hover {
@@ -341,7 +348,7 @@ main {
 }
 
 .tab-link  {
-    --transition-area: all .3s ease-out;
+    --transition-area: all .5s ease-out;
 
     display: flex;
     justify-content: center;
@@ -486,7 +493,7 @@ time#cdEvent > .part >.text {
     padding: var(--space-md);
     background-color: var(--surface2);
     border-radius: var(--rad-sm);
-    transition: all .2s ease-in-out;
+    transition: var(--ease-1);
     cursor: pointer;
     
     &:hover {
@@ -520,7 +527,7 @@ time#cdEvent > .part >.text {
     padding: var(--space-lg);
     opacity: .9;
     overflow: hidden;
-    transition: all .2s ease-in-out;
+    transition: var(--ease-1);
     width: 100%;
     max-width: 48%;
 
@@ -620,7 +627,7 @@ time#cdEvent > .part >.text {
     color: var(--col-text-white);
     background-color: var(--surface2);
     text-decoration: none;
-    transition: all .3s ease-in-out;
+    transition: var(--ease-1);
 
     &:hover {
         outline: 2px solid var(--col-text-white-20);
@@ -644,7 +651,7 @@ time#cdEvent > .part >.text {
         background-color: var(--surface2);
         outline: 5px solid var(--surface1);
         transform: rotateZ(45deg);
-        transition: all .3s ease-in-out;
+        transition: var(--ease-1);
     }
 }
 
@@ -704,6 +711,20 @@ time#cdEvent > .part >.text {
     color: var(--accent1);
 }
 
+
+
+/* page license legality */
+.license-box {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: var(--space-md);
+    max-width: 1000px;
+    color: var(--col-text-black);
+    background-color: var(--col-text-white-10);
+    border-radius: var(--rad-xsm);
+    gap: var(--space-md);
+}
 
 
 
@@ -772,7 +793,7 @@ footer .footer-link-item a {
     gap: var(--space-xxsm);
     width: 100%;
     color: var(--col-text-white);
-    transition: all .1s ease-in-out;
+    transition: var(--ease-1);
     /* outline: var(--debug2); */
     
     &:hover {
@@ -834,7 +855,7 @@ footer .footer-link-item a {
         padding-inline: var(--space-lg);
         border-radius: var(--rad-md) var(--rad-md) 0 0;
         transform: translateY(100%);
-        transition: transform .5s ease-out;
+        transition: var(--ease-1);
     }
 
     .navigasi-mobile.active {
@@ -1004,7 +1025,6 @@ footer .footer-link-item a {
         align-items: start;
         gap: var(--space-md);
     }
-
 
     /* column */
     footer {
