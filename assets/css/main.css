@@ -833,16 +833,15 @@ footer .footer-link-item a {
         padding-top: var(--space-xxlg);
         padding-inline: var(--space-lg);
         border-radius: var(--rad-md) var(--rad-md) 0 0;
-        transform: translateY(200%);
+        transform: translateY(100%);
         transition: transform .5s ease-out;
     }
-    
+
     .navigasi-mobile.active {
         left: 0%;
-        z-index: 1000;
         height: fit-content;
         transform: translateY(0%);
-        transition: transform .5s ease-out;
+        z-index: 1000;
     }
 
     .navigasi-mobile-control {
@@ -851,7 +850,6 @@ footer .footer-link-item a {
         left: 0;
         width: 100%;
         height: fit-content;
-        /* background-color: red; */
     }
     
     .navigasi-mobile-control-group {
