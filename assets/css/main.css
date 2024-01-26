@@ -821,18 +821,19 @@ footer .footer-link-item a {
         width: 100%;
         height: auto;
         background-color: var(--surface2);
-        transform: translateY(200%);
-        transition: all .3s ease-in-out;
         padding-top: var(--space-xxlg);
         padding-inline: var(--space-lg);
         border-radius: var(--rad-md) var(--rad-md) 0 0;
+        transform: translateY(200%);
+        transition: transform .5s ease-out;
     }
-
+    
     .navigasi-mobile.active {
         left: 0%;
-        transform: translateY(0%);
         z-index: 1000;
         height: fit-content;
+        transform: translateY(0%);
+        transition: transform .5s ease-out;
     }
 
     .navigasi-mobile-control {
