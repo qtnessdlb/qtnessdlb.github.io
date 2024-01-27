@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 // sound handler
 
-// cdEvent handler
+// timer handler
 class Countdown {
     constructor(el){
       this.el = el;

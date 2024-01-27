@@ -453,7 +453,8 @@ main {
 
 /* cdEvent */
 time#cdEvent {
-    --pos-timer-event-X: var(--space-md);
+    /* --pos-timer-event-X: var(--space-md); */
+    --pos-timer-event-X: 16rem;
     --pos-timer-event-Y: 2px ;
     position: absolute;
     top: var(--pos-timer-event-Y);
@@ -473,13 +474,36 @@ time#cdEvent {
     /* outline: var(--debug1); */
 }
 
-time#cdEvent > .part {
+time#cdSpecial {
+    --pos-timer-event-X: var(--space-md);
+    --pos-timer-event-Y: 2px ;
+    position: absolute;
+    top: var(--pos-timer-event-Y);
+    right: var(--pos-timer-event-X);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    padding: var(--space-sm);
+    gap: var(--space-md);
+    border-radius: var(--rad-sm);
+    color: var(--col-text-white);
+    background-color: hsla(300, 100%, 50%, 0.10);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    /* outline: var(--debug1); */
+}
+
+time#cdEvent > .part,
+time#cdSpecial > .part {
     display: flex;
     flex-direction: column;
     gap: var(--space-xsm);
 }
 
-time#cdEvent > .part >.text {
+time#cdEvent > .part >.text,
+time#cdSpecial  > .part >.text {
     font-size: .8em;
     color: var(--col-text-white-50);
 }
@@ -1021,7 +1045,8 @@ footer .footer-link-item a {
         overflow: visible;
     }
 
-    time#cdEvent {
+    time#cdEvent,
+    time#cdSpecial {
         --pos-timer-event-X: 0;
         --pos-timer-event-Y: 0;
         position: relative;
@@ -1030,6 +1055,25 @@ footer .footer-link-item a {
         max-width: 100%;
         padding: var(--space-sm);
         gap: var(--space-md);
+    }
+
+    .premium-element {    
+        &::after {
+            top: var(--space-xsm);
+            right: var(--space-xsm);
+        }
+    }
+    
+    .special-element {
+        &::after {
+            top: var(--space-xsm);
+            right: var(--space-xsm);
+        }
+    }
+
+    .page-ctn-quest-box-prem,
+    .page-ctn-quest-box-special {
+        padding: var(--space-xlg) var(--space-md);
     }
 
 
