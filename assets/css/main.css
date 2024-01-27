@@ -485,7 +485,8 @@ time#cdEvent > .part >.text {
 }
 
 /* actual quest */
-.page-ctn-quest-box {
+.page-ctn-quest-box,
+.page-ctn-quest-box-prem {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -503,6 +504,10 @@ time#cdEvent > .part >.text {
     
 }
 
+.page-ctn-quest-box-prem {
+    overflow: hidden;
+    outline: 1px solid var(--accent1);
+}
     
 
 
@@ -566,31 +571,50 @@ time#cdEvent > .part >.text {
     opacity: .1;
 }
 
-.download-box.premium-download {
+.download-box.premium-download{
     position: relative;
 }
 
-.premium-download::before {
+.premium-element {
+    /* outline: 1px solid var(--accent1); */
+
+    &::after {
+        content: 'Bonus';
+        position: absolute;
+        top: var(--space-sm);
+        right: var(--space-sm);
+        padding: var(--space-xxsm) var(--space-xsm);
+        border-radius: var(--rad-xxsm);
+        font-size: .8em;
+        font-weight: 600;
+        color: var(--surface2);
+        background-color: var(--accent1);
+    }
+}
+
+.premium-download::before,
+.premium-element::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 250%;
-    height: 150%;
-    background: #ffffff23;
-    animation: shimmer 5s infinite linear;
-    transition: transform 0.5s;
+    left: -210%;
+    width: 300%;
+    height: 90%;
+    /* background: #ffffff23; */
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.10));
+    animation: shimmer 10s infinite linear;
+    transition: transform 1s;
 }
 
 @keyframes shimmer {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-200%);
         transform: rotate(-45deg);
     }
 
     100% {
         transform: rotate(45deg);
-        transform: translateX(1500%);
+        transform: translateX(1000%);
     }
 }
 

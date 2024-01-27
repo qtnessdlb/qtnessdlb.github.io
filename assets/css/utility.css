@@ -294,6 +294,15 @@ p {
             background-color: var(--surface4);
         }
     }
+    
+    &.btn-third {
+        color: #fafafa;
+        background-color: #333333;
+
+        &:hover {
+            background-color: #3f3f3f;
+        }
+    }
 }
 
 .mbtn {
@@ -395,6 +404,39 @@ p {
     background: rgba(211, 149, 87, 0.356);
     filter: blur(200px);
     z-index: 1;
+}
+
+.locked-ctn {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & .locked-ctn-overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(25px);
+        z-index: 2;
+    }
+
+    & .locked-ctn-overlay i {
+        font-size: 2em;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    & > * {
+        z-index: -1;
+    }
 }
 
 @media screen and (max-width: 768px) {
