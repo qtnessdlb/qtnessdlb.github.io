@@ -100,7 +100,7 @@ class Countdown {
       this.countdownLoopId = setInterval(this.countdownFunction.bind(this), 1000)
     }
     createCountDownParts(){
-      ["days", "hours", "minutes", "seconds"].forEach(part => {
+      ["hari", "jam", "menit", "detik"].forEach(part => {
         const partEl = document.createElement("div");
         partEl.classList.add("part", part);
         const textEl = document.createElement("div");
@@ -126,14 +126,14 @@ class Countdown {
     }
     
     getRemaining(target, now){
-      let seconds = Math.floor((target - (now))/1000);
-      let minutes = Math.floor(seconds/60);
-      let hours = Math.floor(minutes/60);
-      let days = Math.floor(hours/24);
-      hours = hours-(days*24);
-      minutes = minutes-(days*24*60)-(hours*60);
-      seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
-      return { days, hours, minutes, seconds }      
+      let detik = Math.floor((target - (now))/1000);
+      let menit = Math.floor(detik/60);
+      let jam = Math.floor(menit/60);
+      let hari = Math.floor(jam/24);
+      jam = jam-(hari*24);
+      menit = menit-(hari*24*60)-(jam*60);
+      detik = detik-(hari*24*60*60)-(jam*60*60)-(menit*60);
+      return { hari, jam, menit, detik }      
     }
   
   }
