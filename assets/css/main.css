@@ -486,7 +486,8 @@ time#cdEvent > .part >.text {
 
 /* actual quest */
 .page-ctn-quest-box,
-.page-ctn-quest-box-prem {
+.page-ctn-quest-box-prem,
+.page-ctn-quest-box-special {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -504,9 +505,14 @@ time#cdEvent > .part >.text {
     
 }
 
-.page-ctn-quest-box-prem {
+.page-ctn-quest-box-special {
+    outline: 1px solid magenta;
     overflow: hidden;
+}
+
+.page-ctn-quest-box-prem {
     outline: 1px solid var(--accent1);
+    overflow: hidden;
 }
     
 
@@ -592,8 +598,26 @@ time#cdEvent > .part >.text {
     }
 }
 
+.special-element {
+    /* outline: 1px solid var(--accent1); */
+
+    &::after {
+        content: 'Special';
+        position: absolute;
+        top: var(--space-sm);
+        right: var(--space-sm);
+        padding: var(--space-xxsm) var(--space-xsm);
+        border-radius: var(--rad-xxsm);
+        font-size: .8em;
+        font-weight: 600;
+        color: var(--surface2);
+        background-color: magenta;
+    }
+}
+
 .premium-download::before,
-.premium-element::before {
+.premium-element::before,
+.special-element::before {
     content: '';
     position: absolute;
     top: 0;

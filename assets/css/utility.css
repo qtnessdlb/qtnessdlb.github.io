@@ -157,6 +157,45 @@ p {
     }
 }
 
+._quest-line {
+    position: relative;
+    top: 0;
+    color: var(--col-text-white-50);
+    /* background-color: var(--surface2); */
+    text-align: center;
+    width: 100%;
+    margin-inline: auto;
+    margin-block: var(--space-sm);
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Adjust the z-index to make sure the ::before is behind the content */
+
+    &::after,
+    &::before {
+        content: '';
+        background-color: var(--col-text-white-20);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 45%;
+        padding-inline: var(--space-sm);
+    }
+
+    &::before {
+        right: 1em;
+        margin-left: -50%;
+    }
+
+    &::after {
+        left: 1em;
+        margin-right: -50%;
+    }
+}
+
 ._contain {
     margin-inline: auto;
     padding: var(--space-xxlg);
