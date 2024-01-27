@@ -179,7 +179,7 @@ function createDownloadItem(item) {
         <div class="download-box-wrap">
             <h4 class="title" id="title-download">${item.title}</h4>
             <h5 class="title-2" id="desc-download">${item.description}</h5>
-            <p class="desc" id="author-download">${item.author}</p>
+            <p class="desc" id="author-download">${item.author} - ${item.source}</p>
         </div>
         <span class="page-ctn-size-download">${item.size}</span>
     `;
