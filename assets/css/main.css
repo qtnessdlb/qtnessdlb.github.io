@@ -722,7 +722,6 @@ select {
     color: var(--col-text-white);
     background-color: var(--surface2);
     background-image: none;
-    overflow: hidden;
     cursor: pointer;
 
     &::-ms-expand {

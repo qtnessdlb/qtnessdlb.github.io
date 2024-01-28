@@ -181,10 +181,13 @@ $(document).ready(function() {
         var isActive = $naviFilterMobile.hasClass("active");
 
         // Set the height and overflow based on conditions
-        $naviFilterMobile.css("height", isActive ? "fit-content" : "none");
+        $naviFilterMobile.css({
+            "height": isActive ? "fit-content" : "none",
+            "overflow-y": isActive ? "visible" : "visible"
+        });
         $mobileHeaderContent.css({
             "max-height": isActive ? "70vh" : "none",
-            "overflow-y": isActive && $mobileHeaderContent[0].scrollHeight > 90 ? "auto" : "hidden"
+            "overflow-y": isActive && $mobileHeaderContent[0].scrollHeight > 90 ? "visible" : "visible"
         });
     });
 });
