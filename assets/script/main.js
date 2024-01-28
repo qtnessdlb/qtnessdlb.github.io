@@ -148,7 +148,7 @@ class Countdown {
 // mobile
 $(document).ready(function() {
     $(document).on("click", ".toggle-button", function() {
-        console.log("Button clicked!");
+        // console.log("Button clicked!");
         var $navigasiMobile = $(".navigasi-mobile");
         var $mobileHeaderContent = $(".mobile-header-content");
 
@@ -160,6 +160,28 @@ $(document).ready(function() {
 
         // Set the height and overflow based on conditions
         $navigasiMobile.css("height", isActive ? "fit-content" : "none");
+        $mobileHeaderContent.css({
+            "max-height": isActive ? "70vh" : "none",
+            "overflow-y": isActive && $mobileHeaderContent[0].scrollHeight > 90 ? "auto" : "hidden"
+        });
+    });
+});
+
+// mobile
+$(document).ready(function() {
+    $(document).on("click", ".toggle-filter", function() {
+        // console.log("Button clicked!");
+        var $naviFilterMobile = $(".filters-mobile");
+        var $mobileHeaderContent = $(".filters");
+
+        // Toggle class to activate/deactivate the menu
+        $naviFilterMobile.toggleClass("active");
+
+        // Check if .navigasi-mobile is active
+        var isActive = $naviFilterMobile.hasClass("active");
+
+        // Set the height and overflow based on conditions
+        $naviFilterMobile.css("height", isActive ? "fit-content" : "none");
         $mobileHeaderContent.css({
             "max-height": isActive ? "70vh" : "none",
             "overflow-y": isActive && $mobileHeaderContent[0].scrollHeight > 90 ? "auto" : "hidden"
@@ -199,20 +221,6 @@ function appendDownloadItems(data) {
     data.forEach(item => {
         const downloadItem = createDownloadItem(item);
         pageCtnWrap.appendChild(downloadItem);
-    });
-}
-
-function filterDownloadItems(searchText) {
-    const downloadSection = document.getElementById('download');
-    const pageCtnWrap = downloadSection.querySelector('.download-wrap');
-    const downloadItems = pageCtnWrap.querySelectorAll('.download-box');
-
-    downloadItems.forEach(item => {
-        const title = item.querySelector('#title-download').textContent.toLowerCase();
-        const description = item.querySelector('#desc-download').textContent.toLowerCase();
-        const author = item.querySelector('#author-download').textContent.toLowerCase();
-        const shouldShow = title.includes(searchText.toLowerCase()) || description.includes(searchText.toLowerCase()) || author.includes(searchText.toLowerCase());
-        item.style.display = shouldShow ? 'block' : 'none';
     });
 }
 
@@ -264,3 +272,77 @@ function loadLeaderboard() {
 
     leaderboardCardGroup.appendChild(fragment);
 }
+
+// search filter with download item
+// filter.js
+$(document).ready(function() {
+    const downloadSection = $('#download');
+    const pageCtnWrap = downloadSection.find('.download-wrap');
+    const searchInput = $('#search');
+    const filterAuthorSelect = $('#filter-author');
+    const filterDescriptionSelect = $('#filter-description');
+    const filterSourceSelect = $('#filter-source');
+    const filterPremiumSelect = $('#filter-premium');
+    const clearFilterBtn = $('#clear-filter');
+
+    function applyFilters() {
+        const searchTerm = searchInput.val().toLowerCase();
+        const authorFilter = filterAuthorSelect.val();
+        const descriptionFilter = filterDescriptionSelect.val();
+        const sourceFilter = filterSourceSelect.val();
+        const premiumFilter = filterPremiumSelect.val();
+
+        pageCtnWrap.empty();
+
+        const filteredData = downloadData.filter(item => {
+            const matchesAuthor = authorFilter === 'all' || item.author.toLowerCase().includes(authorFilter);
+            const matchesDescription = descriptionFilter === 'all' || item.description.toLowerCase().includes(descriptionFilter);
+            const matchesSource = sourceFilter === 'all' || item.source.toLowerCase().includes(sourceFilter);
+            const matchesPremium = premiumFilter === 'all' || (premiumFilter === 'true' && item.ispremium === 'true') || (premiumFilter === 'false' && item.ispremium === 'false');
+
+            return matchesAuthor && matchesDescription && matchesSource && matchesPremium && Object.values(item).some(value => value.toLowerCase().includes(searchTerm));
+        });
+
+        filteredData.forEach(item => {
+            const downloadItem = createDownloadItem(item);
+            pageCtnWrap.append(downloadItem);
+        });
+    }
+
+    function populateFilterOptions() {
+        const uniqueAuthors = Array.from(new Set(downloadData.map(item => item.author.toLowerCase())));
+        const uniqueDescriptions = Array.from(new Set(downloadData.map(item => item.description.toLowerCase())));
+        const uniqueSources = Array.from(new Set(downloadData.map(item => item.source.toLowerCase())));
+
+        populateDropdown(filterAuthorSelect, uniqueAuthors);
+        populateDropdown(filterDescriptionSelect, uniqueDescriptions);
+        populateDropdown(filterSourceSelect, uniqueSources);
+    }
+
+    function populateDropdown(selectElement, options) {
+        selectElement.empty();
+        selectElement.append('<option value="all">All</option>');
+        options.forEach(option => {
+            selectElement.append(`<option value="${option}">${option}</option>`);
+        });
+    }
+
+    searchInput.on('input', applyFilters);
+    filterAuthorSelect.on('change', applyFilters);
+    filterDescriptionSelect.on('change', applyFilters);
+    filterSourceSelect.on('change', applyFilters);
+    filterPremiumSelect.on('change', applyFilters);
+    clearFilterBtn.on('click', function() {
+        searchInput.val('');
+        filterAuthorSelect.val('all');
+        filterDescriptionSelect.val('all');
+        filterSourceSelect.val('all');
+        filterPremiumSelect.val('all');
+        applyFilters();
+    });
+
+    // Initial rendering
+    appendDownloadItems(downloadData);
+    populateFilterOptions();
+});
+

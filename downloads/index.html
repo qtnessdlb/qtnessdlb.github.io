@@ -72,23 +72,72 @@
                 <div class="_c-col">
 
                     <div class="content-box" id="download">
-
-                        <div class="download-wrap">
-                            <!-- <input type="text" id="searchInput" placeholder="Search by title or description" class="download-search"> -->
-                    
-                            <!-- p -->
-                            <!-- p filter -->
-                    
+                        
+                        <div class="toggle-filter-mobile">
+                            <a class="btn btn-fourth toggle-filter"><i class="ri-filter-3-fill"></i>Filter</a>
                         </div>
 
-                        <!-- <a href="/downloads/animepict9-ctn0-Asada_Shino-SAO-pack1.zip" class="download-box">
-                            <img src="https://source.unsplash.com/random/100x100/" alt="" class="item-img">
-                            <div class="download-box-content">
-                                <h4 class="title">dynamic title 1</h4>
-                                <p class="desc">dynamic description 1</p>
-                                <span class="author-desc">by admin <i class="ri-verified-badge-fill"></i></span>
+                        <!-- Add these filter inputs in your index.html -->
+                        <div class="filters-mobile">
+                            <div class="filters">
+
+                                <div class="navigasi-mobile-control">
+                                    <div class="navigasi-mobile-control-group">
+                                        <div class="mbtn-close toggle-filter"></div>
+                                        <div class="mbtn-close-round toggle-filter"><i class="ri-close-fill"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <label hidden for="search">Search</label>
+                                    <i class="ri-search-line"></i>
+                                    <input type="text" id="search" placeholder="Cari disini">
+                                </div>
+
+                                <div class="filter-group" tooltip="Filter by Author">
+                                    <label hidden for="filter-author">Author</label>
+                                    <i class="ri-user-3-line"></i>
+                                    <select class-"select" id="filter-author">
+                                        <option value="all">All</option>
+                                        <!-- Populate options dynamically in your main.js based on unique authors -->
+                        
+                                </select>
+                                </div>
+
+                                <div class="filter-group" tooltip="Filter by Tags">
+                                    <label hidden for="filter-description">Description</label>
+                                    <i class="ri-hashtag"></i>
+                                    <select class-"select" id="filter-description">
+                                        <option value="all">All</option>
+                                        <!-- Populate options dynamically in your main.js based on unique descriptions -->
+                                    </select>
+                                </div>
+
+                                <div class="filter-group" tooltip="Filter by Source">
+                                    <label hidden for="filter-source">Source</label>
+                                    <i class="ri-user-search-fill"></i>
+                                    <select class-"select" id="filter-source">
+                                        <option value="all">All</option>
+                                        <!-- Populate options dynamically in your main.js based on unique sources -->
+                                    </select>
+                                </div>
+
+                                <div class="filter-group" tooltip="Filter by Premium">
+                                    <label hidden for="filter-premium">Premium</label>
+                                    <i class="ri-vip-crown-fill"></i>
+                                    <select class-"select" id="filter-premium">
+                                        <option value="all">All</option>
+                                        <option value="true">Premium</option>
+                                        <option value="false">Not Premium</option>
+                                    </select>
+                                </div>
+
+                                <a class="btn btn-destroy toggle-filter" id="clear-filter"><i class="ri-delete-bin-fill"></i></a>
+                                
                             </div>
-                        </a> -->
+                        </div>
+                        
+                        <div class="download-wrap"></div>
 
                     </div>
 

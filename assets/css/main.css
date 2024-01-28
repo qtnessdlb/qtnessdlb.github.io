@@ -17,6 +17,9 @@
         --accent1-hover: #ffa959;
     --accent2: #ff49ff;
         --accent2-hover: #ff1dff;
+            
+    --destroy1: #db0a50;
+        --destroy1-hover: #f72269;
 
     --col-text-white: #fafafa;
         --col-text-white-dim: #dddddd;
@@ -198,8 +201,9 @@ main {
 .content-box {
     width: 100%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
-    /* flex-direction: column; */
 }
 
 /* section 2 */
@@ -541,7 +545,7 @@ time#cdSpecial  > .part >.text {
     outline: 1px solid var(--accent1);
     overflow: hidden;
 }
-    
+
 
 
 /* ================== download page =================== */
@@ -664,6 +668,68 @@ time#cdSpecial  > .part >.text {
     font-size: 12px;
 }
 
+.navigasi-mobile-control,
+.toggle-filter-mobile {
+    display: none;
+}
+
+
+.filters {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    color: var(--col-text-white);
+    background-color: var(--surface3);
+}
+
+.filter-group {
+    display: flex;
+    /* flex-direction: column; */
+    /* gap: var(--space-xsm); */
+    align-items: center;
+    justify-content: center;
+
+    & i {
+        padding: var(--space-sm);
+        color: var(--col-text-white-50);
+        background-color: var(--surface2);
+        /* border-right: 1px solid var(--col-text-white-10); */
+    }
+}
+
+input#search {
+    padding: var(--space-sm);
+    color: var(--col-text-white);
+    background-color: var(--surface2);
+    border: none;
+    outline: none;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+    display: flex;
+    flex: 1;
+    padding: var(--space-sm);
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: var(--col-text-white);
+    background-color: var(--surface2);
+    background-image: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+}
 
 /* =========== Leaderboard page ============= */
 .leaderboard-card-group {
@@ -1105,6 +1171,67 @@ footer .footer-link-item a {
         align-items: start;
         gap: var(--space-md);
     }
+
+    .navigasi-mobile-control {
+        display: block;
+    }
+
+    .toggle-filter-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+        max-width: fit-content;
+    }
+
+    .filters {
+        position: relative;
+        flex-direction: column;
+        padding-top: var(--space-xxxlg);
+    }
+
+    .filter-group {
+        display: flex;
+        /* flex-direction: column; */
+        /* gap: var(--space-xsm); */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    
+        & i {
+            padding: var(--space-sm);
+            color: var(--col-text-white-50);
+            background-color: var(--surface2);
+            /* border-right: 1px solid var(--col-text-white-10); */
+        }
+    }
+
+    .filters-mobile {
+        position: fixed;
+        bottom: 0;
+        left: 0%;
+        width: 100%;
+        height: auto;
+        transform: translateY(100%);
+        transition: var(--ease-1);
+    }
+
+    .filters-mobile.active {
+        left: 0%;
+        height: fit-content;
+        transform: translateY(0%);
+        z-index: 1000;
+    }
+    
+    input#search {
+        width: 100%;
+        padding: var(--space-sm);
+        color: var(--col-text-white);
+        background-color: var(--surface2);
+        border: none;
+        outline: none;
+    }
+
 
     /* column */
     footer {

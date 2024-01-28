@@ -317,8 +317,22 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--space-sm);
     padding: var(--btn-space-ud) var(--btn-space-lr);
     transition: all .3s ease-in-out;
+    cursor: pointer;
+    
+    &.btn-destroy {
+        font-size: 1.2em;
+        padding: var(--space-sm);
+        color: var(--col-text-white);
+        background-color: var(--destroy1);
+        border-radius: var(--rad-xsm);
+        
+        &:hover {
+            background-color: var(--destroy1-hover);
+        } 
+    }
     
     &.btn-prime {
         color: var(--col-text-black);
@@ -341,6 +355,16 @@ p {
     &.btn-third {
         color: #fafafa;
         background-color: #333333;
+
+        &:hover {
+            background-color: #3f3f3f;
+        }
+    }
+    
+    &.btn-fourth {
+        padding: var(--space-sm);
+        color: #fafafa;
+        background-color: var(--surface2);
 
         &:hover {
             background-color: #3f3f3f;
