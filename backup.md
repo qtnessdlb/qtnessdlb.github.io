@@ -152,6 +152,114 @@
                                         </div>
 
                                         </div>
+<script>
+
+    // $(document).ready(function() {
+//     const downloadSection = $('#download');
+//     const pageCtnWrap = downloadSection.find('.download-wrap');
+//     const searchInput = $('#search');
+//     const filterAuthorSelect = $('#filter-author');
+//     const filterDescriptionSelect = $('#filter-description');
+//     const filterSourceSelect = $('#filter-source');
+//     const filterPremiumSelect = $('#filter-premium');
+//     const clearFilterBtn = $('#clear-filter');
+
+//     function applyFilters() {
+//         const searchTerm = searchInput.val().toLowerCase();
+//         const authorFilter = filterAuthorSelect.val();
+//         const descriptionFilter = filterDescriptionSelect.val();
+//         const sourceFilter = filterSourceSelect.val();
+//         const premiumFilter = filterPremiumSelect.val();
+
+//         pageCtnWrap.empty();
+
+//         const filteredData = downloadData.filter(item => {
+//             const matchesAuthor = authorFilter === 'all' || item.author.toLowerCase().includes(authorFilter);
+//             const matchesDescription = descriptionFilter === 'all' || item.description.toLowerCase().includes(descriptionFilter);
+//             const matchesSource = sourceFilter === 'all' || item.source.toLowerCase().includes(sourceFilter);
+//             const matchesPremium = premiumFilter === 'all' || (premiumFilter === 'true' && item.ispremium === 'true') || (premiumFilter === 'false' && item.ispremium === 'false');
+
+//             return matchesAuthor && matchesDescription && matchesSource && matchesPremium && Object.values(item).some(value => value.toLowerCase().includes(searchTerm));
+//         });
+
+//         filteredData.forEach(item => {
+//             const downloadItem = createDownloadItem(item);
+//             pageCtnWrap.append(downloadItem);
+//         });
+//     }
+
+//     function populateFilterOptions() {
+//         const uniqueAuthors = Array.from(new Set(downloadData.map(item => item.author.toLowerCase())));
+//         const uniqueDescriptions = Array.from(new Set(downloadData.map(item => item.description.toLowerCase())));
+//         const uniqueSources = Array.from(new Set(downloadData.map(item => item.source.toLowerCase())));
+
+//         populateDropdown(filterAuthorSelect, uniqueAuthors);
+//         populateDropdown(filterDescriptionSelect, uniqueDescriptions);
+//         populateDropdown(filterSourceSelect, uniqueSources);
+//     }
+
+//     function populateDropdown(selectElement, options) {
+//         selectElement.empty();
+//         selectElement.append('<option value="all">All</option>');
+//         options.forEach(option => {
+//             selectElement.append(`<option value="${option}">${option}</option>`);
+//         });
+//     }
+
+//     searchInput.on('input', applyFilters);
+//     filterAuthorSelect.on('change', applyFilters);
+//     filterDescriptionSelect.on('change', applyFilters);
+//     filterSourceSelect.on('change', applyFilters);
+//     filterPremiumSelect.on('change', applyFilters);
+//     clearFilterBtn.on('click', function() {
+//         searchInput.val('');
+//         filterAuthorSelect.val('all');
+//         filterDescriptionSelect.val('all');
+//         filterSourceSelect.val('all');
+//         filterPremiumSelect.val('all');
+//         applyFilters();
+//     });
+
+//     // Initial rendering
+//     appendDownloadItems(downloadData);
+//     populateFilterOptions();
+// });
+
+// // download file handler
+// function createDownloadItem(item) {
+//     const downloadItem = document.createElement('a');
+//     downloadItem.href = item.link;
+//     downloadItem.className = 'download-box';
+
+//     downloadItem.innerHTML = `
+//         <i class="ti ti-cloud-download" id="downloadicon"></i>
+//         <div class="download-box-wrap">
+//             <h4 class="title" id="title-download">${item.title}</h4>
+//             <h5 class="title-2" id="desc-download">${item.description}</h5>
+//             <p class="desc" id="author-download">${item.author} - ${item.source}</p>
+//         </div>
+//         <span class="page-ctn-size-download">${item.size}</span>
+//     `;
+  
+//     if (item.ispremium === 'true') {
+//         downloadItem.classList.add('premium-download');
+//         downloadItem.innerHTML += '<span class="premium-label">Premium</span>';
+//     }
+
+//     return downloadItem;
+// }
+
+// function appendDownloadItems(data) {
+//     const downloadSection = document.getElementById('download');
+//     const pageCtnWrap = downloadSection.querySelector('.download-wrap');
+
+//     data.forEach(item => {
+//         const downloadItem = createDownloadItem(item);
+//         pageCtnWrap.appendChild(downloadItem);
+//     });
+// }
+
+</script>
     
 </body>
 

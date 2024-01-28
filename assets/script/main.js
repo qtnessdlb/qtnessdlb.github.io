@@ -190,39 +190,6 @@ $(document).ready(function() {
 });
 
 
-// download file handler
-function createDownloadItem(item) {
-    const downloadItem = document.createElement('a');
-    downloadItem.href = item.link;
-    downloadItem.className = 'download-box';
-
-    downloadItem.innerHTML = `
-        <i class="ti ti-cloud-download" id="downloadicon"></i>
-        <div class="download-box-wrap">
-            <h4 class="title" id="title-download">${item.title}</h4>
-            <h5 class="title-2" id="desc-download">${item.description}</h5>
-            <p class="desc" id="author-download">${item.author} - ${item.source}</p>
-        </div>
-        <span class="page-ctn-size-download">${item.size}</span>
-    `;
-  
-    if (item.ispremium === 'true') {
-        downloadItem.classList.add('premium-download');
-        downloadItem.innerHTML += '<span class="premium-label">Premium</span>';
-    }
-
-    return downloadItem;
-}
-
-function appendDownloadItems(data) {
-    const downloadSection = document.getElementById('download');
-    const pageCtnWrap = downloadSection.querySelector('.download-wrap');
-
-    data.forEach(item => {
-        const downloadItem = createDownloadItem(item);
-        pageCtnWrap.appendChild(downloadItem);
-    });
-}
 
 // leaderboarddata handler
 document.addEventListener('DOMContentLoaded', function () {
@@ -273,9 +240,8 @@ function loadLeaderboard() {
     leaderboardCardGroup.appendChild(fragment);
 }
 
-// search filter with download item
-// filter.js
-$(document).ready(function() {
+// download file handler + search filter download item
+$(document).ready(function () {
     const downloadSection = $('#download');
     const pageCtnWrap = downloadSection.find('.download-wrap');
     const searchInput = $('#search');
@@ -303,7 +269,11 @@ $(document).ready(function() {
             return matchesAuthor && matchesDescription && matchesSource && matchesPremium && Object.values(item).some(value => value.toLowerCase().includes(searchTerm));
         });
 
-        filteredData.forEach(item => {
+        renderDownloadItems(filteredData);
+    }
+
+    function renderDownloadItems(data) {
+        data.forEach(item => {
             const downloadItem = createDownloadItem(item);
             pageCtnWrap.append(downloadItem);
         });
@@ -332,7 +302,7 @@ $(document).ready(function() {
     filterDescriptionSelect.on('change', applyFilters);
     filterSourceSelect.on('change', applyFilters);
     filterPremiumSelect.on('change', applyFilters);
-    clearFilterBtn.on('click', function() {
+    clearFilterBtn.on('click', function () {
         searchInput.val('');
         filterAuthorSelect.val('all');
         filterDescriptionSelect.val('all');
@@ -342,7 +312,30 @@ $(document).ready(function() {
     });
 
     // Initial rendering
-    appendDownloadItems(downloadData);
+    renderDownloadItems(downloadData);
     populateFilterOptions();
 });
 
+// download file handler
+function createDownloadItem(item) {
+    const downloadItem = document.createElement('a');
+    downloadItem.href = item.link;
+    downloadItem.className = 'download-box';
+
+    downloadItem.innerHTML = `
+        <i class="ti ti-cloud-download" id="downloadicon"></i>
+        <div class="download-box-wrap">
+            <h4 class="title" id="title-download">${item.title}</h4>
+            <h5 class="title-2" id="desc-download">${item.description}</h5>
+            <p class="desc" id="author-download">${item.author} - ${item.source}</p>
+        </div>
+        <span class="page-ctn-size-download">${item.size}</span>
+    `;
+
+    if (item.ispremium === 'true') {
+        downloadItem.classList.add('premium-download');
+        downloadItem.innerHTML += '<span class="premium-label">Premium</span>';
+    }
+
+    return downloadItem;
+}
