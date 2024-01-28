@@ -15,8 +15,11 @@
     
     --accent1: #DE7F28;
         --accent1-hover: #ffa959;
+    --accent2: #ff49ff;
+        --accent2-hover: #ff1dff;
 
     --col-text-white: #fafafa;
+        --col-text-white-dim: #dddddd;
         --col-text-white-05: hsla(0, 0%, 98%, 0.03);
         --col-text-white-10: hsla(0, 0%, 98%, 0.10);
         --col-text-white-20: #fafafa33;
@@ -454,7 +457,7 @@ main {
 /* cdEvent */
 time#cdEvent {
     /* --pos-timer-event-X: var(--space-md); */
-    --pos-timer-event-X: 16rem;
+    --pos-timer-event-X: var(--space-md);
     --pos-timer-event-Y: 2px ;
     position: absolute;
     top: var(--pos-timer-event-Y);
@@ -475,7 +478,7 @@ time#cdEvent {
 }
 
 time#cdSpecial {
-    --pos-timer-event-X: var(--space-md);
+    --pos-timer-event-X: 16rem;
     --pos-timer-event-Y: 2px ;
     position: absolute;
     top: var(--pos-timer-event-Y);
@@ -530,7 +533,7 @@ time#cdSpecial  > .part >.text {
 }
 
 .page-ctn-quest-box-special {
-    outline: 1px solid magenta;
+    outline: 1px solid var(--accent2);
     overflow: hidden;
 }
 
@@ -577,21 +580,6 @@ time#cdSpecial  > .part >.text {
     gap: var(--space-md);
 }
 
-.download-search {
-    font-family: inherit;
-    color: var(--col-text-white);
-    background-color: var(--surface2);
-    padding: var(--space-md);
-    border: none;
-    outline: none;
-    width: 100%;
-    border-bottom: 2px solid var(--col-text-white-20);
-
-    &::placeholder {
-        color: var(--col-text-white-50);
-    }
-}
-
 .download-box #downloadicon {
     position: absolute;
     top: 0%;
@@ -635,7 +623,7 @@ time#cdSpecial  > .part >.text {
         font-size: .8em;
         font-weight: 600;
         color: var(--surface2);
-        background-color: magenta;
+        background-color: var(--accent2);
     }
 }
 

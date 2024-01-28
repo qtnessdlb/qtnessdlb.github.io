@@ -1,3 +1,8 @@
+:root {
+    --bg-tooltip: var(--col-text-white-dim);
+    --text-tooltip: var(--col-text-black);
+}
+
 /* START TOOLTIP STYLES */
 [tooltip] {
     position: relative;
@@ -37,8 +42,8 @@
     padding: 1ch 1.5ch;
     border-radius: .3ch;
     box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
-    background: var(--surface4);
-    color: var(--col-text-white);
+    background-color: var(--bg-tooltip);
+    color: var(--text-tooltip);
     z-index: 1000;
     /* absurdity 2 */
 }
@@ -58,14 +63,14 @@
 /* FLOW: UP */
 [tooltip]:not([flow])::before,
 [tooltip][flow^="up"]::before {
-    bottom: 100%;
+    bottom: 120%;
     border-bottom-width: 0;
-    border-top-color: var(--surface4);
+    border-top-color: var(--bg-tooltip);
 }
 
 [tooltip]:not([flow])::after,
 [tooltip][flow^="up"]::after {
-    bottom: calc(100% + 5px);
+    bottom: calc(120% + 5px);
 }
 
 [tooltip]:not([flow])::before,
@@ -80,7 +85,7 @@
 [tooltip][flow^="down"]::before {
     top: 100%;
     border-top-width: 0;
-    border-bottom-color: var(--surface4);
+    border-bottom-color: var(--bg-tooltip);
 }
 
 [tooltip][flow^="down"]::after {
@@ -97,7 +102,7 @@
 [tooltip][flow^="left"]::before {
     top: 50%;
     border-right-width: 0;
-    border-left-color: var(--surface4);
+    border-left-color: var(--bg-tooltip);
     left: calc(0em - 25px);
     transform: translate(-.5em, -50%);
 }
@@ -112,7 +117,7 @@
 [tooltip][flow^="right"]::before {
     top: 50%;
     border-left-width: 0;
-    border-right-color: var(--surface4);
+    border-right-color: var(--bg-tooltip);
     right: calc(0em - 25px);
     transform: translate(.5em, -50%);
 }
