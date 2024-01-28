@@ -47,11 +47,11 @@ window.addEventListener('resize', function () {
 });
 
 // clean link
-// if (window.location.pathname.endsWith('.html')) {
-//     var newPath = window.location.pathname.replace(/\.html$/, '');
-//     history.replaceState({}, '', newPath);
-//     document.title = document.title.replace(/\.html$/, '');
-// }
+if (window.location.pathname.endsWith('.html')) {
+    var newPath = window.location.pathname.replace(/\.html$/, '');
+    history.replaceState({}, '', newPath);
+    document.title = document.title.replace(/\.html$/, '');
+}
 
 if (window.location.pathname.endsWith('/')) {
     var newPath = window.location.pathname.slice(0, -1);
