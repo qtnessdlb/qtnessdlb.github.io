@@ -482,6 +482,7 @@ p {
     overflow: hidden;
     cursor: pointer;
     min-height: 500px;
+    max-height: 750px;
     width: 100%;
 
     & .locked-ctn-overlay {
