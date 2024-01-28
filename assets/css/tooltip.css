@@ -63,14 +63,14 @@
 /* FLOW: UP */
 [tooltip]:not([flow])::before,
 [tooltip][flow^="up"]::before {
-    bottom: 120%;
+    bottom: 110%;
     border-bottom-width: 0;
     border-top-color: var(--bg-tooltip);
 }
 
 [tooltip]:not([flow])::after,
 [tooltip][flow^="up"]::after {
-    bottom: calc(120% + 5px);
+    bottom: calc(110% + 5px);
 }
 
 [tooltip]:not([flow])::before,
