@@ -135,7 +135,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1; /* Adjust the z-index to make sure the ::before is behind the content */
+    z-index: 1;
 
     &::after,
     &::before {
@@ -174,7 +174,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1; /* Adjust the z-index to make sure the ::before is behind the content */
+    z-index: 1;
 
     &::after,
     &::before {
@@ -386,10 +386,10 @@ p {
 }
 
 .mbtn-close {
-    /* position: absolute; */
-    /* top: 2.5rem; */
-    /* left: 0; */
-    /* right: 0; */
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
     margin-inline: auto;
     height: 5px;
     width: 20%;
@@ -481,8 +481,8 @@ p {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    min-height: 500px;
-    max-height: 750px;
+    min-height: 300px;
+    max-height: 450px;
     width: 100%;
 
     & .locked-ctn-overlay {
