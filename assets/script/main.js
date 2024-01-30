@@ -377,8 +377,9 @@ function toggleLayoutForDownloadItems() {
 }
 
 // Add event listener to the layout change button
-document.getElementById('layoutChange').addEventListener('click', toggleLayoutForDownloadItems);
-
+document.querySelectorAll('#layoutChange').forEach(function(element) {
+    element.addEventListener('click', toggleLayoutForDownloadItems);
+});
 
 addDownloadItemsToDocument(sampleItems);
 
