@@ -1,6 +1,60 @@
 var downloadData = [
     {
         ispremium: 'false',
+        title: 'WP Yuki Itose - Pack 2',
+        description: 'Yubisaki To Renren',
+        author: 'By Reiyu インドラ',
+        source: 'Event',
+        size: '1.4 MB',
+        link: '/downloads/animepict9-ctn0-Yuki_Itose-Yubisaki_to_Renren-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Chitanda Eru - Pack 2',
+        description: 'Hyouka',
+        author: 'By Reiyu インドラ',
+        source: 'Event',
+        size: '900 KB',
+        link: '/downloads/animepict9-ctn0-Chitanda_Eru-Hyouka-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Mia Luna Tearmoon - Pack 2',
+        description: 'Tearmoon Teikoku Monogatari',
+        author: 'By Reiyu インドラ',
+        source: 'Event',
+        size: '800 KB',
+        link: '/downloads/animepict9-ctn0-Mia_Luna-Tearmoon_Teikoku-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Fern - Pack 2',
+        description: 'Sousou No Frieren',
+        author: 'By Reiyu インドラ',
+        source: 'Event',
+        size: '1.6 MB',
+        link: '/downloads/animepict9-ctn0-Fern-Sousou_no_Frieren-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Nanashi Mumei - Pack 2',
+        description: 'Hololive',
+        author: 'By Reiyu インドラ',
+        source: 'Event',
+        size: '800 KB',
+        link: '/downloads/animepict9-ctn0-Nanashi_Mumei-Hololive-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Aqua - Pack 2',
+        description: 'Konosuba',
+        author: 'By Reiyu インドラ',
+        source: 'Event',
+        size: '1.4 MB',
+        link: '/downloads/animepict9-ctn0-Aqua-Konosuba-pack2.zip'
+    },
+    {
+        ispremium: 'false',
         title: 'WP Yuki Itose - Pack 1',
         description: 'Yubisaki To Renren',
         author: 'By harutoみずち',

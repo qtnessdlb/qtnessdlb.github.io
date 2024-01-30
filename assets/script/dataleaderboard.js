@@ -5,7 +5,7 @@ var users = [
         username: "epangotama",
         socialLink: "instagram.com",
         imageUrl: "https://media-cgk1-2.cdn.whatsapp.net/v/t61.24694-24/379811005_395624739707709_6210896889879609901_n.jpg?ccb=11-4&oh=01_AdQjfvwNaRLFfwPtJe6AQr7noc6Nh-B_OrngKY3iBI1rJA&oe=65BF679C&_nc_sid=e6ed6c&_nc_cat=105",
-        points: "970 - Boosted",
+        points: "Boosted - 850",
         completedTasks: 4,
         goingTasks: 4,
         phaseProgress: "Phase 3 Completed"
@@ -15,10 +15,10 @@ var users = [
         username: "lelouch_official77",
         socialLink: "instagram.com",
         imageUrl: "https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/405183837_330799403017499_3669056780112851839_n.jpg?ccb=11-4&oh=01_AdReLukrml3xzwaJ4vHQP4m4CvLGoQsENyLBDZnoUWpg-Q&oe=65BDDD32&_nc_sid=e6ed6c&_nc_cat=101",
-        points: 450,
-        completedTasks: 0,
+        points: "Boosted - 820",
+        completedTasks: 4,
         goingTasks: 4,
-        phaseProgress: "Phase 3"
+        phaseProgress: "Phase 3 Completed"
     },
     {
         name: "izha",
