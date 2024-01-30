@@ -20,7 +20,7 @@ var downloadData = [
     {
         ispremium: 'false',
         title: 'WP Mia Luna Tearmoon - Pack 1',
-        description: 'Tiermoon Teikoku Monogatari',
+        description: 'Tearmoon Teikoku Monogatari',
         author: 'By harutoみずち',
         source: 'Event',
         size: '3 MB',
