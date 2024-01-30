@@ -312,6 +312,10 @@ p {
 .btn-group {
     display: flex;
     gap: var(--space-sm);
+
+    &._btngrp-2 {
+        flex-direction: row;
+    }
 }
 
 .btn {
@@ -328,14 +332,14 @@ p {
     
     &.btn-destroy {
         font-size: 1.2em;
-        padding: var(--space-sm);
+        /* padding: var(--space-sm); */
         color: var(--col-text-white);
         background-color: var(--destroy1);
         border-radius: var(--rad-xsm);
         
         &:hover {
             background-color: var(--destroy1-hover);
-        } 
+        }
     }
     
     &.btn-prime {
@@ -344,7 +348,8 @@ p {
         
         &:hover {
             background-color: var(--accent1-hover);
-        } 
+        }
+
     }
     
     &.btn-second {
@@ -363,6 +368,7 @@ p {
         &:hover {
             background-color: #3f3f3f;
         }
+
     }
     
     &.btn-fourth {
@@ -373,6 +379,14 @@ p {
         &:hover {
             background-color: #3f3f3f;
         }
+
+
+    }
+
+    &:is(.icon-btn) {
+        font-size: 1.2em;
+        padding: var(--space-sm);
+        border-radius: var(--rad-xsm);
     }
 }
 

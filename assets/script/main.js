@@ -319,11 +319,11 @@ $(document).ready(function () {
     populateFilterOptions();
 });
 
-// download file handler
+// download file handler and Layout shift
 function createDownloadItem(item) {
     const downloadItem = document.createElement('a');
     downloadItem.href = item.link;
-    downloadItem.className = 'download-box';
+    downloadItem.className = 'download-box _layout-1';
 
     downloadItem.innerHTML = `
         <i class="ti ti-cloud-download" id="downloadicon"></i>
@@ -342,3 +342,45 @@ function createDownloadItem(item) {
 
     return downloadItem;
 }
+
+// Add download items to the document
+function addDownloadItemsToDocument(items) {
+    const downloadContainer = document.getElementById('downloadContainer');
+
+    items.forEach((item) => {
+        const downloadItem = createDownloadItem(item);
+        downloadContainer.appendChild(downloadItem);
+    });
+}
+
+// Toggle layout for all download items
+function toggleLayoutForDownloadItems() {
+    const downloadItems = document.querySelectorAll('.download-box');
+    const layoutChangeButton = document.getElementById('layoutChange');
+    const iconElement = layoutChangeButton.querySelector('i');
+
+    downloadItems.forEach((downloadItem) => {
+        if (downloadItem.classList.contains('_layout-1')) {
+            downloadItem.classList.remove('_layout-1');
+            downloadItem.classList.add('_layout-2');
+            iconElement.className = 'ri-layout-grid-fill';
+        } else if (downloadItem.classList.contains('_layout-2')) {
+            downloadItem.classList.remove('_layout-2');
+            downloadItem.classList.add('_layout-3');
+            iconElement.className = 'ri-list-check-2';
+        } else {
+            downloadItem.classList.remove('_layout-3');
+            downloadItem.classList.add('_layout-1');
+            iconElement.className = 'ri-grid-fill';
+        }
+    });
+}
+
+// Add event listener to the layout change button
+document.getElementById('layoutChange').addEventListener('click', toggleLayoutForDownloadItems);
+
+
+addDownloadItemsToDocument(sampleItems);
+
+  
+  
