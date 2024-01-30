@@ -5,10 +5,10 @@ var users = [
         username: "tsukimiharuto",
         socialLink: "instagram.com",
         imageUrl: "https://media-cgk1-2.cdn.whatsapp.net/v/t61.24694-24/379811005_395624739707709_6210896889879609901_n.jpg?ccb=11-4&oh=01_AdQjfvwNaRLFfwPtJe6AQr7noc6Nh-B_OrngKY3iBI1rJA&oe=65BF679C&_nc_sid=e6ed6c&_nc_cat=105",
-        points: 460,
-        completedTasks: 0,
+        points: "970 - Boosted",
+        completedTasks: 4,
         goingTasks: 4,
-        phaseProgress: "Phase 3"
+        phaseProgress: "Phase 3 Completed"
     },
     {
         name: "Reiyu インドラ",
