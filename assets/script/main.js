@@ -357,7 +357,7 @@ function addDownloadItemsToDocument(items) {
 function toggleLayoutForDownloadItems() {
     const downloadItems = document.querySelectorAll('.download-box');
     const layoutChangeButton = document.getElementById('layoutChange');
-    const iconElement = layoutChangeButton.querySelector('i');
+    const iconElement = layoutChangeButton.querySelector('#icon-layoutChange');
 
     downloadItems.forEach((downloadItem) => {
         if (downloadItem.classList.contains('_layout-1')) {
@@ -376,7 +376,6 @@ function toggleLayoutForDownloadItems() {
     });
 }
 
-// Add event listener to the layout change button
 document.querySelectorAll('#layoutChange').forEach(function(element) {
     element.addEventListener('click', toggleLayoutForDownloadItems);
 });
