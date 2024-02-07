@@ -5,10 +5,10 @@ var users = [
         username: "epangotama",
         socialLink: "instagram.com",
         imageUrl: "https://media-cgk1-1.cdn.whatsapp.net/v/t61.24694-24/379811005_395624739707709_6210896889879609901_n.jpg?ccb=11-4&oh=01_AdRbnOcI39txO-UC7TLqHWsEJggSEFQqtV2oQaHPzShffQ&oe=65CE90DC&_nc_sid=e6ed6c&_nc_cat=105",
-        points: "Boosted - 850",
-        completedTasks: 0,
+        points: "2.200",
+        completedTasks: 1,
         goingTasks: 1,
-        phaseProgress: "Final"
+        phaseProgress: "Final Completed"
     },
     {
         name: "Reiyu インドラ",

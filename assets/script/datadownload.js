@@ -1,5 +1,68 @@
 var downloadData = [
     {
+        ispremium: 'false',
+        title: 'WP Kanade - Pack 1',
+        description: 'Yuusha Party Beast Tamer',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: '981 KB',
+        link: 'downloads/animepict9-ctn0-Kanade-Beast_Tamer-Pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Katou Megumi - Pack 1',
+        description: 'Saenai Heroine Sodetakata',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: '3.5 MB',
+        link: 'downloads/animepict9-ctn0-Katou_Megumi-Saekano-Pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Honjou Kaede (Maple) - Pack 1',
+        description: 'Bofuri',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: ' 563 KB',
+        link: 'downloads/animepict9-ctn0-Maple-Bofuri-Pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Nishimiya Shouko - Pack 1',
+        description: 'Koe No Katachi',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: '754 KB',
+        link: 'downloads/animepict9-ctn0-Nishimiya_Shouko-Koe_no_Katachi-Pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Shigure Ui - Pack 1',
+        description: 'Virtual Youtuber',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: '972 KB',
+        link: 'downloads/animepict9-ctn0-Shigure_Ui-Vtuber-Pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Shiina Mashiro - Pack 1',
+        description: 'Sakurasou no Pet na Kanojo',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: '892 KB',
+        link: 'downloads/animepict9-ctn0-Shiina_Mashiro-Sakurasou-Pack1.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Vestia Zeta - Pack 1',
+        description: 'Hololive',
+        author: 'By harutoみずち',
+        source: 'Event',
+        size: '985 KB',
+        link: 'downloads/animepict9-ctn0-Vestia_Zeta-Hololive-Pack1.zip'
+    },
+    {
         ispremium: 'true',
         title: 'WP Pack by Rebellion - Pack 5',
         description: 'Random',
