@@ -1,6 +1,24 @@
 var downloadData = [
     {
         ispremium: 'false',
+        title: 'WP Hyouka - Pack 2',
+        description: 'Hyouka',
+        author: 'By Admin',
+        source: 'Pixiv',
+        size: '33.4 MB',
+        link: 'downloads/animepict9-ctn0-Hyouka-pack2.zip'
+    },
+    {
+        ispremium: 'false',
+        title: 'WP Hyouka - Pack 1',
+        description: 'Hyouka',
+        author: 'By Admin',
+        source: 'Pixiv',
+        size: ' 35.8 MB',
+        link: 'downloads/animepict9-ctn0-Hyouka-pack1.zip'
+    },
+    {
+        ispremium: 'false',
         title: 'WP Kanade - Pack 1',
         description: 'Yuusha Party Beast Tamer',
         author: 'By harutoみずち',
