@@ -33,7 +33,37 @@
 
     <title>Leaderboard - Qtness Design</title>
 </head>
+<style>
 
+    .winbox {
+        padding: 3rem;
+        max-width: fit-content;
+        border: 2px solid goldenrod;
+        border-radius: 1rem;
+    }
+
+    h4.titlewin {
+        position: relative;
+        margin-top: 2rem;
+
+        &::before {
+            content: "Winner";
+            display: flex;
+            position: absolute;
+            top: -30px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: max-content;
+            height: auto;
+            margin-inline: auto;
+            font-size: .8em;
+            font-weight: 500;
+            opacity: 50%;
+        }
+    }
+
+</style>
 <body>
     <header id="mainHeader" class="header"></header>
     <main>
@@ -42,7 +72,7 @@
             <div class="_contain">
                 <div class="_c-col">
                     <h1 class="hero-title">Members <span class="_highlight">Leaderboard</span></h1>
-                    <h4 class="title">Updating Last Winner: <span class="_highlight">. . .</span></h4>
+                    <h4 class="title">Last Winner: <span class="_highlight">harutoみずち</span></h4>
                     <a href="/event/" class="btn btn-second">Back to Event</a>
                 </div>
             </div>
@@ -52,9 +82,11 @@
             <div class="_contain">
                 <div class="_c-col">
                     
-                    <div class="content-box _c-col">
+                    <div class="content-box _c-col winbox">
                         
-                        <h4 class="title">Updating Leaderboard</h4>
+                        <i class="ri-trophy-line" style="display: flex; font-size: 4rem; color: gold; margin-top: -5rem; padding-inline: 1rem; background-color: var(--surface1);"></i>
+                        <h4 class="title titlewin">harutoみずち</h4>
+                        <a href="//instagram.com/epangotama" class="lb-user-social-link">@epangotama</a>
                         <!-- <div class="leaderboard-card-group" id="leaderboard-card-group"> -->
 
                             <!-- Hola! -->
